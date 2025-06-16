@@ -1,0 +1,52 @@
+@model NewUserViewModel
+@{
+    Layout = Constants.LOGIN_LAYOUT;
+    ViewData["Title"] = "Register";
+    ViewData["BodyClass"] = "register-page bg-body-secondary";
+    ViewData["BoxClass"] = "register-box";
+}
+
+<p class="register-box-msg">Register a new membership</p>
+<form asp-action="Register" asp-controller="Authentication" method="post">
+    <div class="input-group mb-1">
+        <div class="form-floating">
+            <input id="registerUserName" asp-for="UserName" type="text" placeholder="" minlength="3" maxlength="32"
+                autocomplete="username" class="form-control" required />
+            <label for="registerUserName">User Name</label>
+            <span class="text-danger" asp-validation-for="UserName"></span>
+        </div>
+        <div class="input-group-text"><span class="bi bi-person"></span></div>
+    </div>
+    <div class="input-group mb-2">
+        <div class="form-floating">
+            <input id="registerEmail" asp-for="EmailId" type="email" placeholder="" minlength="5" maxlength="255"
+                autocomplete="email" class="form-control" required />
+            <label for="registerEmail">Email</label>
+            <span class="text-danger" asp-validation-for="EmailId"></span>
+        </div>
+        <div class="input-group-text"><span class="bi bi-envelope"></span></div>
+    </div>
+    <div class="input-group mb-1">
+        <div class="form-floating">
+            <input id="registerPassword" asp-for="Password" placeholder="" minlength="8" maxlength="64"
+                autocomplete="new-password" type="password" class="form-control" required />
+            <label for="registerPassword">Password</label>
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </div>
+        <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+    </div>
+    <div class="row">
+        <div class="d-grid gap-2">
+            <div class="social-auth-links text-center mb-1 d-grid gap-2">
+                <button type="submit" class="btn btn-success"><i class="bi bi-person-plus-fill me-2"></i> Create
+                    Account</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="social-auth-links text-center mb-3 d-grid gap-2">
+    <a asp-controller="Authentication" asp-action="Index" class="btn btn-primary"><i
+            class="bi bi-box-arrow-in-right me-2"></i> I already have a membership</a>
+    <a asp-controller="Authentication" asp-action="ForgotPassword" class="btn btn-danger"><i class="bi bi-key me-2"></i>
+        I forgot my password</a>
+</div>

@@ -1,0 +1,541 @@
+[2025-06-13T13:11:57.8169898Z]
+{
+  "ErrorMessage": "An error occurred while fetching the transaction list.",
+  "StackTrace": "   at CashCanvas.Services.Services.TransactionService.GetTransactionListAsync() in d:\\Expense Tracker\\BussinessLogicLayer\\Services\\TransactionService.cs:line 37\r\n   at CashCanvas.Web.Controllers.TransactionController.Index() in d:\\Expense Tracker\\CashCanvasWebApplication\\Controllers\\TransactionController.cs:line 14\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.\u003CInvokeActionMethodAsync\u003Eg__Awaited|12_0(ControllerActionInvoker invoker, ValueTask\u00601 actionResultValueTask)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.\u003CInvokeNextActionFilterAsync\u003Eg__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State\u0026 next, Scope\u0026 scope, Object\u0026 state, Boolean\u0026 isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeNextResourceFilter\u003Eg__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State\u0026 next, Scope\u0026 scope, Object\u0026 state, Boolean\u0026 isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeAsync\u003Eg__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeAsync\u003Eg__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\\Expense Tracker\\CashCanvasWebApplication\\Middlewares\\ExceptionHandlerMiddleware.cs:line 35",
+  "ExceptionType": "Exception",
+  "StatusCode": "500",
+  "ControllerName": "Transaction",
+  "ActionName": "Index"
+}
+
+[2025-06-14T10:45:26.0572809Z]
+{
+  "ErrorMessage": "An error occurred while fetching the transaction list.",
+  "StackTrace": "   at CashCanvas.Services.Services.TransactionService.GetTransactionListAsync() in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\BussinessLogicLayer\\Services\\TransactionService.cs:line 37\r\n   at CashCanvas.Web.Controllers.TransactionController.Index() in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Controllers\\TransactionController.cs:line 14\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.\u003CInvokeActionMethodAsync\u003Eg__Awaited|12_0(ControllerActionInvoker invoker, ValueTask\u00601 actionResultValueTask)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.\u003CInvokeNextActionFilterAsync\u003Eg__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State\u0026 next, Scope\u0026 scope, Object\u0026 state, Boolean\u0026 isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeNextResourceFilter\u003Eg__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State\u0026 next, Scope\u0026 scope, Object\u0026 state, Boolean\u0026 isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeAsync\u003Eg__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeAsync\u003Eg__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\JWTMiddleware.cs:line 74\r\n   at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\LoggingMiddleware.cs:line 19\r\n   at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\ExceptionHandlerMiddleware.cs:line 35",
+  "ExceptionType": "Exception",
+  "StatusCode": "500",
+  "ControllerName": "Transaction",
+  "ActionName": "Index"
+}
+
+[2025-06-14T10:46:52.9388626Z]
+{
+  "ErrorMessage": "An error occurred while fetching the transaction list.",
+  "StackTrace": "   at CashCanvas.Services.Services.TransactionService.GetTransactionListAsync() in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\BussinessLogicLayer\\Services\\TransactionService.cs:line 37\r\n   at CashCanvas.Web.Controllers.TransactionController.Index() in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Controllers\\TransactionController.cs:line 14\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.\u003CInvokeActionMethodAsync\u003Eg__Awaited|12_0(ControllerActionInvoker invoker, ValueTask\u00601 actionResultValueTask)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.\u003CInvokeNextActionFilterAsync\u003Eg__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State\u0026 next, Scope\u0026 scope, Object\u0026 state, Boolean\u0026 isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeNextResourceFilter\u003Eg__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State\u0026 next, Scope\u0026 scope, Object\u0026 state, Boolean\u0026 isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeAsync\u003Eg__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeAsync\u003Eg__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\JWTMiddleware.cs:line 74\r\n   at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\LoggingMiddleware.cs:line 19\r\n   at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\ExceptionHandlerMiddleware.cs:line 35",
+  "ExceptionType": "Exception",
+  "StatusCode": "500",
+  "ControllerName": "Transaction",
+  "ActionName": "Index"
+}
+
+[2025-06-14T10:51:06.9421926Z]
+{
+  "ErrorMessage": "An error occurred while fetching the transaction list.",
+  "StackTrace": "   at CashCanvas.Services.Services.TransactionService.GetTransactionListAsync() in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\BussinessLogicLayer\\Services\\TransactionService.cs:line 37\r\n   at CashCanvas.Web.Controllers.TransactionController.Index() in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Controllers\\TransactionController.cs:line 14\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.\u003CInvokeActionMethodAsync\u003Eg__Awaited|12_0(ControllerActionInvoker invoker, ValueTask\u00601 actionResultValueTask)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.\u003CInvokeNextActionFilterAsync\u003Eg__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State\u0026 next, Scope\u0026 scope, Object\u0026 state, Boolean\u0026 isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeNextResourceFilter\u003Eg__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State\u0026 next, Scope\u0026 scope, Object\u0026 state, Boolean\u0026 isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeAsync\u003Eg__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeAsync\u003Eg__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\JWTMiddleware.cs:line 74\r\n   at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\LoggingMiddleware.cs:line 19\r\n   at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\ExceptionHandlerMiddleware.cs:line 35",
+  "ExceptionType": "Exception",
+  "StatusCode": "500",
+  "ControllerName": "Transaction",
+  "ActionName": "Index"
+}
+
+[2025-06-15T12:07:02.2367372Z]
+{
+  "ErrorMessage": "The model item passed into the ViewDataDictionary is of type \u0027CashCanvas.Core.ViewModel.TransactionViewModel\u0027, but this ViewDataDictionary instance requires a model item of type \u0027System.Collections.Generic.List\u00601[CashCanvas.Core.DTOs.CategoryViewModel]\u0027.",
+  "StackTrace": "   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)\r\n   at lambda_method174(Closure, ViewDataDictionary)\r\n   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)\r\n   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)\r\n   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)\r\n   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)\r\n   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable\u00601 statusCode)\r\n   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable\u00601 statusCode)\r\n   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable\u00601 statusCode)\r\n   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)\r\n   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeNextResultFilterAsync\u003Eg__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State\u0026 next, Scope\u0026 scope, Object\u0026 state, Boolean\u0026 isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeNextResourceFilter\u003Eg__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State\u0026 next, Scope\u0026 scope, Object\u0026 state, Boolean\u0026 isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeAsync\u003Eg__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.\u003CInvokeAsync\u003Eg__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\JWTMiddleware.cs:line 77\r\n   at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\LoggingMiddleware.cs:line 19\r\n   at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in f:\\.net\\CashCanvasExpenseManagementHub\\Cash-Canvas-Expense-Tracker-System\\CashCanvasWebApplication\\Middlewares\\ExceptionHandlerMiddleware.cs:line 35",
+  "ExceptionType": "InvalidOperationException",
+  "StatusCode": "409",
+  "ControllerName": "Transaction",
+  "ActionName": "AddTransaction"
+}
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T08:01:36.553Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : CreateBill                                             │
+│ Error Message   : An error occurred while featching Bill List. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BillService.CreateBillAsync(BillViewModel billViewModel) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BillService.cs:line 59│
+│ at CashCanvas.Web.Controllers.BillController.CreateBill(BillViewModel billViewModel) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BillController.cs:line 50│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T09:21:34.457Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : EditBill                                               │
+│ Error Message   : An error occurred while featching Bill List. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BillService.GetBillByIdAsync(Guid billId) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BillService.cs:line 121│
+│ at CashCanvas.Web.Controllers.BillController.EditBill(Guid id)           │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context)  │
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context)│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context)│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T09:21:39.130Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : EditBill                                               │
+│ Error Message   : An error occurred while featching Bill List. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BillService.GetBillByIdAsync(Guid billId) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BillService.cs:line 121│
+│ at CashCanvas.Web.Controllers.BillController.EditBill(Guid id)           │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context)  │
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context)│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context)│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T09:22:26.009Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : EditBill                                               │
+│ Error Message   : An error occurred while featching Bill List. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BillService.GetBillByIdAsync(Guid billId) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BillService.cs:line 121│
+│ at CashCanvas.Web.Controllers.BillController.EditBill(Guid id) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BillController.cs:line 64│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T10:22:49.244Z                               │
+│ Status Code     : 409                                                    │
+│ Exception Type  : InvalidOperationException                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : Index                                                  │
+│ Error Message   : Unable to resolve service for type 'CashCanvas.Services.Interfaces.IBudgetService' while attempting to activate 'CashCanvas.Web.Controllers.BudgetController'.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)│
+│ at lambda_method185(Closure, IServiceProvider, Object[])                 │
+│ at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context)  │
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context)│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context)│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T10:24:36.223Z                               │
+│ Status Code     : 409                                                    │
+│ Exception Type  : InvalidOperationException                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : Index                                                  │
+│ Error Message   : Unable to resolve service for type 'CashCanvas.Services.Interfaces.IBudgetService' while attempting to activate 'CashCanvas.Web.Controllers.BudgetController'.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)│
+│ at lambda_method220(Closure, IServiceProvider, Object[])                 │
+│ at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context)  │
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context)│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context)│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T10:24:39.225Z                               │
+│ Status Code     : 409                                                    │
+│ Exception Type  : InvalidOperationException                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : Index                                                  │
+│ Error Message   : Unable to resolve service for type 'CashCanvas.Services.Interfaces.IBudgetService' while attempting to activate 'CashCanvas.Web.Controllers.BudgetController'.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)│
+│ at lambda_method220(Closure, IServiceProvider, Object[])                 │
+│ at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context)  │
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context)│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context)│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T10:28:53.388Z                               │
+│ Status Code     : 409                                                    │
+│ Exception Type  : InvalidOperationException                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : CreateBudget                                           │
+│ Error Message   : The view 'CreateBudget' was not found. The following locations were searched:
+/Views/Budget/CreateBudget.cshtml
+/Views/Shared/CreateBudget.cshtml│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)│
+│ at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context)  │
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context)│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context)│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T12:05:30.764Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : UpdateBill                                             │
+│ Error Message   : An error occurred while featching Bill List. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BillService.UpdateBillAsync(BillViewModel billViewModel) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BillService.cs:line 219│
+│ at CashCanvas.Web.Controllers.BillController.UpdateBill(BillViewModel bill) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BillController.cs:line 82│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T12:06:00.850Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : UpdateBill                                             │
+│ Error Message   : An error occurred while featching Bill List. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BillService.UpdateBillAsync(BillViewModel billViewModel) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BillService.cs:line 219│
+│ at CashCanvas.Web.Controllers.BillController.UpdateBill(BillViewModel bill) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BillController.cs:line 82│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T12:27:05.019Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : UpdateBill                                             │
+│ Error Message   : An error occurred while featching Bill List. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BillService.UpdateBillAsync(BillViewModel billViewModel) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BillService.cs:line 219│
+│ at CashCanvas.Web.Controllers.BillController.UpdateBill(BillViewModel bill) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BillController.cs:line 82│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T12:34:27.569Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : UpdateBill                                             │
+│ Error Message   : An error occurred while featching Bill List. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BillService.UpdateBillAsync(BillViewModel billViewModel) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BillService.cs:line 219│
+│ at CashCanvas.Web.Controllers.BillController.UpdateBill(BillViewModel bill) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BillController.cs:line 82│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T12:38:18.398Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : UpdateBill                                             │
+│ Error Message   : An error occurred while featching Bill List. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BillService.UpdateBillAsync(BillViewModel billViewModel) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BillService.cs:line 219│
+│ at CashCanvas.Web.Controllers.BillController.UpdateBill(BillViewModel bill) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BillController.cs:line 82│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T12:39:28.322Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : UpdateBill                                             │
+│ Error Message   : An error occurred while featching Bill List. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BillService.UpdateBillAsync(BillViewModel billViewModel) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BillService.cs:line 219│
+│ at CashCanvas.Web.Controllers.BillController.UpdateBill(BillViewModel bill) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BillController.cs:line 82│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\CashCanvas\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T20:51:56.687Z                               │
+│ Status Code     : 409                                                    │
+│ Exception Type  : InvalidOperationException                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : Index                                                  │
+│ Error Message   : The partial view '../PartialViews/_BillList' was not found. The following locations were searched:
+/Views/PartialViews/_BillList.cshtml
+/Views/PartialViews/_BillList.cshtml│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)│
+│ at AspNetCoreGeneratedDocument.Views_Bill_Index.ExecuteAsync() in F:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Views\Bill\Index.cshtml:line 6│
+│ at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)│
+│ at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)│
+│ at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)│
+│ at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in F:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in F:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in F:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T20:52:03.665Z                               │
+│ Status Code     : 409                                                    │
+│ Exception Type  : InvalidOperationException                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : Index                                                  │
+│ Error Message   : The partial view '../PartialViews/_BillList' was not found. The following locations were searched:
+/Views/PartialViews/_BillList.cshtml
+/Views/PartialViews/_BillList.cshtml│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)│
+│ at AspNetCoreGeneratedDocument.Views_Bill_Index.ExecuteAsync() in F:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Views\Bill\Index.cshtml:line 6│
+│ at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)│
+│ at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)│
+│ at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)│
+│ at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in F:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in F:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in F:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-16T20:54:18.939Z                               │
+│ Status Code     : 409                                                    │
+│ Exception Type  : InvalidOperationException                              │
+│ Controller Name : Bill                                                   │
+│ Action Name     : Index                                                  │
+│ Error Message   : The partial view '../PartialViews/_BillList' was not found. The following locations were searched:
+/Views/PartialViews/_BillList.cshtml
+/Views/PartialViews/_BillList.cshtml│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)│
+│ at AspNetCoreGeneratedDocument.Views_Bill_Index.ExecuteAsync() in f:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Views\Bill\Index.cshtml:line 6│
+│ at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)│
+│ at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)│
+│ at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)│
+│ at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)│
+│ at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in f:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in f:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in f:\.net\CashCanvasExpenseManagementHub\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+

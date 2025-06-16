@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashCanvas.Core", "Core\CashCanvas.Core.csproj", "{F15D6AE3-30FF-467A-8185-CFBBA250ACB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashCanvas.Data", "DataAccessLayer\CashCanvas.Data.csproj", "{B1235B4B-EB28-40D2-B0DD-5A28CA4FF1B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashCanvas.Services", "BussinessLogicLayer\CashCanvas.Services.csproj", "{FF9128B4-0F2F-41D3-B3AA-FCFCA1603F8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashCanvas.Common", "Common\CashCanvas.Common.csproj", "{90CDCA72-74B2-4FA2-B680-5517EBF0267C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashCanvas.Web", "CashCanvasWebApplication\CashCanvas.Web.csproj", "{01A8BF84-32FD-4EDA-9C02-935C9E4C8006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F15D6AE3-30FF-467A-8185-CFBBA250ACB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15D6AE3-30FF-467A-8185-CFBBA250ACB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15D6AE3-30FF-467A-8185-CFBBA250ACB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15D6AE3-30FF-467A-8185-CFBBA250ACB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1235B4B-EB28-40D2-B0DD-5A28CA4FF1B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1235B4B-EB28-40D2-B0DD-5A28CA4FF1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1235B4B-EB28-40D2-B0DD-5A28CA4FF1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1235B4B-EB28-40D2-B0DD-5A28CA4FF1B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9128B4-0F2F-41D3-B3AA-FCFCA1603F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9128B4-0F2F-41D3-B3AA-FCFCA1603F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9128B4-0F2F-41D3-B3AA-FCFCA1603F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9128B4-0F2F-41D3-B3AA-FCFCA1603F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90CDCA72-74B2-4FA2-B680-5517EBF0267C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90CDCA72-74B2-4FA2-B680-5517EBF0267C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90CDCA72-74B2-4FA2-B680-5517EBF0267C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90CDCA72-74B2-4FA2-B680-5517EBF0267C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A8BF84-32FD-4EDA-9C02-935C9E4C8006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A8BF84-32FD-4EDA-9C02-935C9E4C8006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A8BF84-32FD-4EDA-9C02-935C9E4C8006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A8BF84-32FD-4EDA-9C02-935C9E4C8006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

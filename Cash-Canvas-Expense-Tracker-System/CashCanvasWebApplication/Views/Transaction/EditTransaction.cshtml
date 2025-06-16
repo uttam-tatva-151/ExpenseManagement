@@ -1,0 +1,93 @@
+@model TransactionViewModel
+@{
+    Layout = Constants.MAIN_LAYOUT;
+    ViewData["Title"] = "Edit Transaction";
+    List<string> iconClasses = new()
+    {
+        "bi-cash", "bi-wallet", "bi-graph-up", "bi-graph-down", "bi-house", "bi-people", "bi-gear", "bi-lightbulb",
+        "bi-phone", "bi-car-front", "bi-shop", "bi-piggy-bank", "bi-calendar-event", "bi-chat-text",
+        "bi-bag", "bi-cash-coin", "bi-truck", "bi-controller", "bi-briefcase", "bi-credit-card", "bi-house-door", "bi-gift"
+    };
+    Random rand = new();
+}
+
+<link rel="stylesheet" href="~/css/transactionPage.css" asp-append-version="true" />
+
+<div class="glassCard">
+    <div class="iconCircle mb-2">
+        <i class="bi bi-pencil-square"></i>
+    </div>
+    <div class="formTitle text-center mb-4">Edit Transaction</div>
+
+    <form asp-action="UpdateTransaction" asp-controller="Transaction" method="post" autocomplete="off">
+        <input type="hidden" asp-for="TransactionId" />
+        
+        <!-- Transaction Type -->
+        <div class="mb-3 text-center">
+            <span class="sectionLabel"><i class="bi bi-arrow-left-right"></i> Type</span><br>
+            <div class="btn-group typeSwitch mt-2" role="group">
+                <button id="btnIncome" type="button" class="btn btn-light btn-sm @(Model.TransactionType == "Income" ? "active" : "")">Income</button>
+                <button id="btnExpense" type="button" class="btn btn-light btn-sm ms-2 @(Model.TransactionType == "Expense" ? "active" : "")">Expense</button>
+            </div>
+            <input type="hidden" asp-for="TransactionType" id="transactionType" />
+        </div>
+
+        <!-- Amount -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-cash"></i> Amount</label>
+            <div class="input-group amountGroup">
+                <input type="number" step="0.01" min="0" class="form-control" asp-for="Amount" required placeholder="Enter amount">
+                <span class="input-group-text"><i class="bi bi-currency-rupee"></i></span>
+            </div>
+            <span class="text-danger" asp-validation-for="Amount"></span>
+        </div>
+
+        <!-- Category -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-collection"></i> Category</label>
+            <select class="form-select mt-2" asp-for="CategoryId" required>
+                <option value="">Select category</option>
+                @foreach (CategoryViewModel cat in Model.Categories)
+                {
+                    <option value="@cat.CategoryId" selected="@(cat.CategoryId == Model.CategoryId)">
+                        @cat.CategoryName
+                    </option>
+                }
+            </select>
+            <span class="text-danger" asp-validation-for="CategoryId"></span>
+            <input type="hidden" asp-for="Categories" value="@Model.Categories" />
+        </div>
+
+        <!-- Payment Method -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-credit-card"></i> Payment Method</label>
+            <select class="form-select" asp-for="PaymentMethod" asp-items="Html.GetEnumSelectList<PaymentMethod>()" required>
+                <option value="">Select method</option>
+            </select>
+            <span class="text-danger" asp-validation-for="PaymentMethod"></span>
+        </div>
+
+        <!-- Date -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-calendar-event"></i> Date</label>
+            <input type="date" class="form-control" asp-for="TransactionDate" required>
+            <span class="text-danger" asp-validation-for="TransactionDate"></span>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-chat-text"></i> Description</label>
+            <textarea class="form-control" asp-for="Description" rows="2" placeholder="Write a note (optional)"></textarea>
+            <span class="text-danger" asp-validation-for="Description"></span>
+        </div>
+
+        <!-- Submit -->
+        <div class="d-grid">
+            <button type="submit" class="btn btnGradient btn-lg rounded-pill">
+                <i class="bi bi-check-circle"></i> Save Changes
+            </button>
+        </div>
+    </form>
+</div>
+
+<script src="~/js/transactionPage.js" asp-append-version="true"></script>

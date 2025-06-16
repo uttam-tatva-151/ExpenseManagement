@@ -1,0 +1,303 @@
+@model List<BillViewModel>
+@{
+    ViewData["Title"] = "Bill List";
+    Layout = "_Layout";
+    PaginationDetails pagination = ViewBag.Pagination as PaginationDetails ?? new();
+    List<BillViewModel> MainBills = Model.Where(t => t.IsContinued).ToList();
+    List<BillViewModel> TrashedBills = Model.Where(t => !t.IsContinued).ToList();
+}
+
+<link rel="stylesheet" href="~/css/billPage.css" />
+
+<div class="billsSection">
+    <div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+        <div class="mb-2">
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-cash-stack me-2"></i>Bills
+            </h2>
+            <div class="btn-group" role="group" aria-label="Bill View Toggle">
+                <button id="btnShowMain" class="btn btn-outline-primary active" onclick="showMainList()">
+                    <i class="bi bi-list-ul"></i> Main List
+                </button>
+                <button id="btnShowTrash" class="btn btn-outline-primary trashBtn" onclick="showTrashList()">
+                    <i class="bi bi-trash3"></i> Trash
+                </button>
+            </div>
+        </div>
+
+        <div class="d-flex gap-2 flex-wrap">
+            <!-- Filter Button -->
+            <button class="btn btn-outline-secondary rounded-pill" id="btnFilter">
+                <i class="bi bi-funnel-fill"></i> Filters
+            </button>
+
+            <!-- Search Button -->
+            <button class="btn btn-outline-secondary rounded-pill" data-bs-toggle="modal" data-bs-target="#searchModal">
+                <i class="bi bi-search"></i> Search
+            </button>
+
+            <!-- Import/Export Buttons -->
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#importBillsModal">
+                    <i class="bi bi-upload"></i> Import
+                </button>
+                <button class="btn btn-outline-success">
+                    <i class="bi bi-download"></i> Export</button>
+            </div>
+
+            <!-- New Bill Button -->
+            <a class="btn btn-primary rounded-pill px-4" asp-action="Create">
+                <i class="bi bi-plus-circle"></i> New Bill
+            </a>
+        </div>
+    </div>
+
+    <div id="billList" class="overflow-auto" style="max-height: 70vh; padding-right: 15px;">
+        @await Html.PartialAsync("PartialViews/_BillList", Model)
+    </div>
+
+
+</div>
+
+<!-- Search Modal -->
+<div class="modal searchPanel" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning-subtle">
+                <h5 class="modal-title" id="searchModalLabel">
+                    <i class="bi bi-search"></i> Search Bills
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="searchInput" class="form-control mb-3" placeholder="Type to search bills..."
+                    onkeyup="filterSearchResults()" />
+                <div id="searchResults"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filter Overlay -->
+<div class="detailsOverlayBg" id="filterOverlayBg">
+    <div class="detailsOverlayPanel">
+        <button class="detailsOverlayClose" onclick="toggleFiltersPanel()" aria-label="Close overlay">
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="glassCard"
+            style="background:transparent;box-shadow:none;padding:22px 18px 10px 18px;margin:0;max-width:460px;">
+            <div class="iconCircle mb-2">
+                <i class="bi bi-funnel-fill"></i>
+            </div>
+            <div class="detailsTitle text-center mb-3">Filter Bills</div>
+
+            <!-- Sort By -->
+            <div class="mb-3">
+                <label class="form-label">Sort by</label>
+                <select class="form-select" asp-for="@pagination.SortBy">
+                    <option value="">Select</option>
+                    <option value="name">Name</option>
+                    <option value="amount">Amount</option>
+                    <option value="due">Due Date</option>
+                </select>
+            </div>
+
+            <!-- Time Filter -->
+            <div class="mb-3">
+                <label class="form-label">Time Range</label>
+                <select class="form-select" asp-for="@pagination.TimeFilter"
+                    asp-items="Html.GetEnumSelectList<TimeFilterType>()">
+                    <option value="">Select time range</option>
+                </select>
+            </div>
+
+            <!-- Items Per Page -->
+            <div class="mb-3">
+                <label class="form-label">Items per page</label>
+                <select class="form-select" asp-for="@pagination.PageSize"
+                    asp-items="Html.GetEnumSelectList<PageSize>()">
+                    <option value="">Select items per page</option>
+                </select>
+            </div>
+
+            <!-- Apply Button -->
+            <button type="submit" class="btn btn-primary w-100 mt-3">
+                <i class="bi bi-funnel"></i> Apply Filters
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Bill Details Modal -->
+<div class="detailsOverlayBg" id="detailsOverlayBg">
+    <div class="detailsOverlayPanel">
+        <button class="detailsOverlayClose" id="detailsOverlayClose" aria-label="Close overlay">
+            <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="glassCard"
+            style="background:transparent;box-shadow:none;padding:22px 18px 10px 18px;margin:0;max-width:460px;">
+            <div class="iconCircle mb-2">
+                <i class="bi bi-cart4"></i>
+            </div>
+            <div class="detailsTitle text-center mb-2">Bill Details</div>
+            <ul class="detailsList">
+                <li>
+                    <span class="statusPill statusActive"><i class="bi bi-check-circle"></i> Active</span>
+                </li>
+                <li>
+                    <i class="bi bi-cash"></i>
+                    <span class="amountDetail"></span>
+                </li>
+                <li>
+                    <i class="bi bi-calendar-event"></i>
+                    <span class="dueDate"></span>
+                </li>
+                <li>
+                    <i class="bi bi-clock"></i>
+                    <span class="frequency"></span>
+                </li>
+                <li>
+                    <i class="bi bi-bell"></i>
+                    <span class="reminderDay"></span>
+                </li>
+                <li>
+                    <i class="bi bi-credit-card-2-front"></i>
+                    <span class="paymentMethod"></span>
+                </li>
+                <li>
+                    <i class="bi bi-file-text"></i>
+                    <span class="notes"></span>
+                </li>
+            </ul>
+            <div class="d-grid mt-3">
+                <a href="#" class="btn btnGradient btn-lg rounded-pill editBillBtn">
+                    <i class="bi bi-pencil-square"></i> Edit Bill
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for delete confirmation -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content" style="border-radius:20px;box-shadow:0 8px 32px rgba(78,84,200,0.18);border:none;">
+            <div class="modal-body text-center py-4" style="position:relative;">
+                <div style="margin-bottom:12px;">
+                    <span class="d-inline-flex align-items-center justify-content-center"
+                        style="width:54px;height:54px;background:linear-gradient(135deg,#ed6ea0 0%,#ec8c69 100%);border-radius:16px;box-shadow:0 4px 12px #ed6ea0;">
+                        <i class="bi bi-trash3" style="font-size:2.3rem;color:#fff;"></i>
+                    </span>
+                </div>
+                <div style="font-weight:800;font-size:1.32rem;color:#ed6ea0;letter-spacing:1px;">
+                    Delete Bill?
+                </div>
+                <div class="text-secondary" style="font-size:1.01rem;margin:8px 0 0 0;">
+                    This action is <span class="fw-bold text-danger">irreversible</span>.<br>
+                    Are you sure you want to delete this bill?
+                </div>
+            </div>
+            <form method="post" asp-action="DeleteBill" asp-controller="Bill" id="deleteBillForm">
+                <input type="hidden" id="billIdToDelete" name="id" value="" required>
+                <div class="modal-footer border-0 pt-0 justify-content-center">
+                    <button type="reset" class="btn btn-light rounded-pill px-4 me-1 border-0" data-bs-dismiss="modal"
+                        style="background:linear-gradient(90deg,#e0eaff 0%,#f4f8ff 100%);color:#3949ab;font-weight:600;">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btnGradient rounded-pill px-4 ms-1" id="confirmDeleteBtn"
+                        style="background:linear-gradient(90deg,#ed6ea0 0%,#ec8c69 100%);font-weight:700;border:none;">
+                        <i class="bi bi-trash3"></i> Delete
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for capturing payment details -->
+<div class="modal fade" id="markAsPaidModal" tabindex="-1" aria-labelledby="markAsPaidModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content"
+            style="border-radius: 20px; border-left: 8px solid #ffb300; box-shadow: 0 6px 24px -8px #00796b33; background: #fff;">
+            <div class="modal-header"
+                style="background: linear-gradient(90deg, #e0f7fa 0%, #fffde7 100%); border-bottom: none;">
+                <h5 class="modal-title" id="markAsPaidModalLabel" style="color: #00796b; font-weight: 600;">Mark Bill as
+                    Paid</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="markAsPaidForm">
+                    <input type="hidden" id="billId" name="BillId" value="">
+                    <div class="mb-3">
+                        <label for="amountPaid" class="form-label" style="color: #7e8a9d; font-size: 0.92rem;">Amount
+                            Paid</label>
+                        <input type="number" class="form-control" id="amountPaid" name="AmountPaid" step="0.01"
+                            min="0.01" required
+                            style="border-radius: 12px; border: 1px solid #b2dfdb; color: #ff6f00; font-weight: 700;">
+                        <div class="invalid-feedback">Please enter a valid amount greater than 0.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="paymentMethod" class="form-label"
+                            style="color: #7e8a9d; font-size: 0.92rem;">Payment Method</label>
+                        <select class="form-select" id="paymentMethod" name="PaymentMethod" required asp-items="Html.GetEnumSelectList<PaymentMethod>()"
+                            style="border-radius: 12px; border: 1px solid #b2dfdb; color: #00796b;">
+                            <option value="" disabled selected>Select payment method</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a payment method.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="notes" class="form-label" style="color: #7e8a9d; font-size: 0.92rem;">Notes
+                            (Optional)</label>
+                        <textarea class="form-control" id="notes" name="Notes" rows="3" maxlength="500"
+                            style="border-radius: 12px; border: 1px solid #b2dfdb; color: #616161;"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"
+                style="border-top: none; background: linear-gradient(90deg, #e0f7fa 0%, #fffde7 100%);">
+                <button type="button" class="btn" data-bs-dismiss="modal"
+                    style="background: #eceff1; color: #616161; border-radius: 12px; padding: 8px 20px;">Cancel</button>
+                <button type="button" class="btn" id="submitPayment"
+                    style="background: linear-gradient(90deg, #ffb300 0%, #ff7043 100%); color: #fff; border-radius: 12px; padding: 8px 20px;">Confirm
+                    Payment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Custom date Range-->
+<div class="modal" id="customDateModal" tabindex="-1" aria-labelledby="customDateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content shadow-lg">
+            <div class="modal-header">
+                <h5 class="modal-title" id="customDateModalLabel">
+                    Select Custom Date Range
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="modalFromDate" class="form-label">From Date</label>
+                <input type="date" id="modalFromDate" class="form-control mb-3" />
+                <label for="modalToDate" class="form-label">To Date</label>
+                <input type="date" id="modalToDate" class="form-control" />
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button class="btn btn-primary" onclick="applyCustomDateRange()">
+                    Apply
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const bills = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model));
+    </script>
+    <script src="~/js/billPage.js"></script>
+}

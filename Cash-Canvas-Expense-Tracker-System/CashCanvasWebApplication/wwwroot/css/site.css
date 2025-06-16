@@ -1,0 +1,125 @@
+html {
+  font-size: 14px;
+  position: relative;
+  min-height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #314c8069 #f1f1f1;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+body {
+  margin-bottom: 60px;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4caf50; /* Expense theme green */
+  border-radius: 6px;
+  position: relative;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #388e3c;
+}
+
+
+/* Main Toastr Toast Styling */
+#toast-container > .toast {
+  border-radius: 10px;
+  min-width: 320px;
+  max-width: 480px;
+  padding: 18px 28px;
+  color: #fff;
+  font-size: 1.05rem;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.18);
+  border: none;
+  opacity: 1 !important;         /* Fully opaque background */
+  background-clip: padding-box;
+  background: #23272f;           /* Default background, overwritten below */
+  z-index: 9999;
+  transition: opacity 1.2s ease, transform 0.6s cubic-bezier(.17,.67,.83,.67);
+  animation: slideUpSnackbar 0.1s cubic-bezier(.17,.67,.83,.67);
+}
+
+/* Custom backgrounds for different types */
+#toast-container > .toast-success {
+  background: #219653 !important; /* Vibrant green */
+}
+#toast-container > .toast-error {
+  background: #c62828 !important; /* Strong red */
+}
+#toast-container > .toast-warning {
+  background: #f9a825 !important; /* Bright yellow/orange */
+  color: #23272f !important;      /* Dark text for contrast */
+}
+#toast-container > .toast-info {
+  background: #1976d2 !important; /* Bold blue */
+}
+
+/* Progress bar style */
+#toast-container > .toast .toast-progress {
+  background-color: #fff;
+  opacity: 0.7;
+  height: 4px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Close button improvements */
+#toast-container > .toast .toast-close-button {
+  color: #fff !important;
+  opacity: 0.85;
+  font-size: 1.25em;
+  right: 10px;
+  top: 10px;
+  transition: opacity 0.4s;
+}
+#toast-container > .toast .toast-close-button:hover {
+  opacity: 1;
+}
+
+@keyframes slideUpSnackbar {
+  from {
+      transform: translateY(80px) translateX(-10%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(90) translateX(-30%);
+      opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  #toast-container > .toast {
+      min-width: 90vw;
+      max-width: 95vw;
+      padding: 14px 10px;
+      font-size: 0.95rem;
+      left: 50%;
+      transform: translateX(-50%);
+      word-break: break-word;
+  }
+  .toast-bottom-center {
+      left: 50%;
+      right: auto;
+      bottom: 20px;
+      width: 100vw;
+      transform: translateX(-50%);
+  }
+  #toast-container > .toast .toast-close-button {
+      right: 6px;
+      top: 6px;
+      font-size: 1.15em;
+  }
+}

@@ -1,0 +1,380 @@
+.transactionsSection {
+    max-width: 70vw;
+    width: 100%;
+    min-width: 30vw;
+    margin: 40px auto 0 auto;
+}
+.transactionCard {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px -8px #a3a3c2;
+    margin-bottom: 22px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative;
+    overflow: hidden;
+}
+.transactionCard:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 12px 32px -6px #8e8ec2;
+}
+.transactionAvatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+    margin-right: 20px;
+}
+.categoryBadge {
+    font-size: 0.96rem;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 4px 15px;
+    background: linear-gradient(90deg, #e0eaff 0%, #f4f8ff 100%);
+    color: #3949ab;
+}
+.amount {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+.amount.expense {
+    color: #ff5252;
+}
+.amount.income {
+    color: #43a047;
+}
+.meta {
+    font-size: 0.92rem;
+    color: #8892b0;
+}
+.actionBtns a {
+    margin-left: 10px;
+}
+.statusPill {
+    font-size: 0.92rem;
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+.statusIncome {
+    background: #d5f5e3;
+    color: #388e3c;
+}
+.statusExpense {
+    background: #ffebee;
+    color: #c62828;
+}
+.trashBtn {
+    background: linear-gradient(90deg, #ed6ea0 0%, #ec8c69 100%);
+    color: #fff !important;
+    border: none;
+}
+.trashBtn:hover {
+    background: linear-gradient(90deg, #ec8c69 0%, #ed6ea0 100%);
+    color: #fff !important;
+}
+.restoreBtn {
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+    color: #fff !important;
+    border: none;
+}
+.restoreBtn:hover {
+    background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+    color: #fff !important;
+}
+.customCategoryBtn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 0.68rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #fff;
+    background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px #4e54c81a;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.customCategoryBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px #4e54c833;
+    background: linear-gradient(90deg, #8f94fb 0%, #4e54c8 100%);
+}
+.customCategoryBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px #4e54c81a;
+}
+.customCategoryBtn i {
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+.customCategoryBtn:hover i {
+    transform: rotate(90deg);
+}
+
+/* Glass card and details */
+.glassCard {
+    background: rgba(255,255,255,0.95);
+    border-radius: 28px;
+    box-shadow: 0 8px 32px rgba(78,84,200,0.18);
+    margin-top: 18px;
+    padding: 40px 32px 32px 32px;
+    zoom: 90%;
+    max-width: 80vh;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    /* overflow: auto; */
+}
+.glassCard:before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%);
+    border-radius: 50%;
+    filter: blur(28px);
+    opacity: 0.25;
+    z-index: 0;
+}
+.formTitle,
+.detailsTitle {
+    font-weight: 800;
+    font-size: 2.1rem;
+    color: #4e54c8;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px #e0eaff99;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 14px;
+}
+.detailsTitle {
+    margin-bottom: 22px;
+}
+.sectionLabel {
+    font-size: 1.01rem;
+    font-weight: 700;
+    color: #5c6bc0;
+    margin-bottom: 5px;
+    letter-spacing: 0.03em;
+}
+.form-control, .form-select {
+    border-radius: 16px;
+    font-size: 1.05rem;
+    padding: 6px 14px;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #4e54c8;
+    box-shadow: 0 0 0 0.1rem #8f94fb33;
+}
+.typeSwitch .btn {
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: #f4f8ff;
+    color: #4e54c8;
+    border: none;
+    transition: background 0.25s, color 0.25s;
+}
+.typeSwitch .btn.active,
+.typeSwitch .btn:hover {
+    background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+    color: #fff;
+}
+.amountGroup .input-group-text {
+    background: #e0eaff;
+    border-radius: 0 16px 16px 0;
+    font-size: 1.2rem;
+}
+.btnGradient {
+    background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+    color: #fff !important;
+    border: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 11px 0;
+    border-radius: 18px;
+    letter-spacing: 0.03em;
+    box-shadow: 0 3px 10px #4e54c81a;
+    transition: background 0.2s;
+}
+.btnGradient:hover {
+    background: linear-gradient(90deg, #8f94fb 0%, #4e54c8 100%);
+}
+.iconCircle {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 12px #8f94fb33;
+}
+.quickCats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.quickCat {
+    background: #f3f7fa;
+    border-radius: 14px;
+    padding: 4px 14px;
+    font-size: 0.98rem;
+    color: #4e54c8;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #e0eaff;
+    transition: background 0.15s, color 0.15s;
+}
+.quickCat:hover, .quickCat.selected {
+    background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+    color: #fff;
+    border-color: #8f94fb;
+}
+
+/* Transaction Details Page Specific */
+.detailsList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+.detailsList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.09rem;
+    font-weight: 500;
+    color: #4e54c8;
+}
+.detailsList .bi {
+    font-size: 1.4rem;
+    margin-right: 13px;
+    color: #8f94fb;
+    min-width: 28px;
+}
+.amountDetail {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.amountExpense {
+    color: #ff5252;
+}
+.amountIncome {
+    color: #43a047;
+}
+.descBox {
+    background: #f3f7fa;
+    border-radius: 14px;
+    padding: 13px 18px;
+    font-size: 1rem;
+    color: #616161;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+/* Overlay styles */
+.detailsOverlayBg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1055;
+    background: rgba(44, 44, 84, 0.22);
+    transition: background 0.3s;
+}
+.detailsOverlayBg.open {
+    display: block;
+    animation: fadeInBg 0.2s;
+}
+.transactionFiller {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px #e0eaff33;
+    margin: 32px auto;
+    max-width: 400px;
+}
+.fillerIcon {
+    font-size: 2.6rem;
+    color: #4e54c8;
+    opacity: 0.6;
+}
+.fillerTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #4e54c8;
+}
+.fillerSubtitle {
+    font-size: 1rem;
+}
+.detailsOverlayPanel {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; right: 0;
+    height: 100vh;
+    width: 430px;
+    max-width: 100vw;
+    background: #f8fafc;
+    box-shadow: -2px 0 32px #23236a22;
+    z-index: 1060;
+    transform: translateX(100%);
+    transition: transform 0.32s cubic-bezier(.7,.08,.45,1.03);
+}
+.detailsOverlayBg.open .detailsOverlayPanel {
+    transform: translateX(0);
+}
+.detailsOverlayClose {
+    position: absolute;
+    top: 18px; right: 18px;
+    font-size: 1.7rem;
+    color: #4e54c8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+/* Responsive */
+@media (max-width: 650px) {
+    .glassCard {
+        zoom: 70%;
+    }
+    .formTitle, .detailsTitle {
+        font-size: 1.3rem;
+    }
+    .transactionCard {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    .transactionAvatar {
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 600px) {
+    .detailsOverlayPanel { width: 100vw !important; }
+}
+@media (max-width: 576px) {
+    .customCategoryBtn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+@media (max-width: 450px) {
+    .glassCard {
+        zoom: 70%;
+    }
+}
+
+@keyframes fadeInBg { from { opacity: 0;} to { opacity: 1;} }

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Cash Canvas Expense Tracker System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Cash Canvas Team" />
+    <meta name="description"
+        content="Cash Canvas Expense Tracker System - Manage and track your expenses, budgets, and financial goals easily." />
+    <meta name="keywords" content="expense tracker, budget management, personal finance, cash canvas" />
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontsource/source-sans-3@5.0.12/index.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/styles/overlayscrollbars.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/lib/adminLTE/css/adminlte.css" />
+</head>
+
+<body class="@ViewData["BodyClass"]">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="@ViewData["BoxClass"]">
+        <div class="card card-outline card-primary">
+            <div class="card-header">
+                <a
+                    class="link-dark text-center text-decoration-none link-offset-2 link-opacity-100 link-opacity-50-hover">
+                    <h1 class="mb-0"><b>Cash Canvas</b></h1>
+                </a>
+            </div>
+            <div class="card-body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.8/dist/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+    <script src="~/lib/adminLTE/js/adminlte.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/authenticationModule.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        let ToastMessage = '@(TempData["ToastMessage"] ?? "")';
+        let ToastType = '@(TempData["ToastStatus"] ?? "")';
+        if (ToastMessage) {
+            console.log("ToastMessage: " + ToastMessage);
+            showToast(ToastMessage, ToastType);
+        } 
+    </script>
+    <script>
+        $(document).on('mousemove', function (e) {
+            const x = (e.clientX / $(window).innerWidth()) * 100 + '%';
+            const y = (e.clientY / $(window).innerHeight()) * 100 + '%';
+            $('.login-page, .register-page, .forgot-password-page, .reset-password-page').each(function () {
+                $(this).css({
+                    '--mouse-x': x,
+                    '--mouse-y': y
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            const $sidebarWrapper = $('.sidebar-wrapper');
+            if ($sidebarWrapper.length && typeof OverlayScrollbarsGlobal?.OverlayScrollbars !== 'undefined') {
+                OverlayScrollbarsGlobal.OverlayScrollbars($sidebarWrapper[0], {
+                    scrollbars: {
+                        theme: 'os-theme-light',
+                        autoHide: 'leave',
+                        clickScroll: true
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

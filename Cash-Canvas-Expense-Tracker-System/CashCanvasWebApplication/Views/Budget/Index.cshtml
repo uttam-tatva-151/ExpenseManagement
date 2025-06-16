@@ -1,0 +1,145 @@
+@model List<BudgetViewModel>
+@{
+    ViewData["Title"] = "Budget List";
+    Layout = "_Layout";
+    List<BudgetViewModel> mainBudgets = Model.Where(b => b.IsContinued).ToList();
+    List<BudgetViewModel> trashedBudgets = Model.Where(b => !b.IsContinued).ToList();
+}
+
+<link rel="stylesheet" href="~/css/budgetPage.css" />
+
+<div class="budgetsSection">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-wallet2 me-2"></i>Budgets
+            </h2>
+            <div class="btn-group" role="group" aria-label="Budget View Toggle">
+                <button id="btnShowMain" class="btn btn-outlinePrimary active" onclick="showMainList()">
+                    <i class="bi bi-list-ul"></i> Main List
+                </button>
+                <button id="btnShowTrash" class="btn btnTrash" onclick="showTrashList()">
+                    <i class="bi bi-trash3"></i> Trash
+                </button>
+            </div>
+        </div>
+        <a class="btn btnPrimary rounded-pill px-4" asp-action="Create">
+            <i class="bi bi-plus-circle"></i> New Budget
+        </a>
+    </div>
+
+    <!-- Main Budget List -->
+    <div id="mainBudgetList">
+        @if (mainBudgets.Any())
+        {
+            @foreach (var budget in mainBudgets)
+            {
+                <div class="budgetCard p-3 d-flex align-items-center">
+                    <div class="budgetAvatar">
+                        @* <i class="bi @budget.IconClass"></i> *@
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="budgetBadge">@budget.CategoryName</span>
+                            <span class="amount">₹@budget.Amount.ToString("N2")</span>
+                        </div>
+                        <div class="mt-1 mb-2 meta">
+                            <i class="bi bi-calendar-event"></i>
+                            @budget.StartDate.ToString("yyyy-MM-dd") to @budget.EndDate.ToString("yyyy-MM-dd")
+                            &middot; <span class="periodPill">@budget.Period</span>
+                        </div>
+                        <div style="max-width: 500px;">
+                            <span class="text-secondary">@budget.Notes</span>
+                        </div>
+                    </div>
+                    <div class="ms-2 text-end">
+                        <div class="budgetActionBtns mt-2">
+                            <a asp-action="Edit" asp-route-id="@budget.BudgetId"
+                                class="btn btn-outlineSuccess btn-sm rounded-pill" title="Edit">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a asp-action="Details" asp-route-id="@budget.BudgetId"
+                                class="btn btn-outlineInfo btn-sm rounded-pill" title="View">
+                                <i class="bi bi-eye"></i>
+                            </a>
+                            <a href="#" class="btn btn-outlineDanger btn-sm rounded-pill btnMoveToTrash"
+                                data-budget-id="@budget.BudgetId" title="Move to Trash">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="budgetFiller text-center p-4">
+                <div class="fillerIcon mb-3">
+                    <i class="bi bi-inbox"></i>
+                </div>
+                <div class="fillerTitle mb-2">No Budgets Found</div>
+                <div class="fillerSubtitle text-muted">
+                    You haven’t added any budgets yet.<br>
+                    Start by adding your first budget!
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Trash List -->
+    <div id="trashBudgetList" style="display:none;">
+        @if (trashedBudgets.Any())
+        {
+            @foreach (var budget in trashedBudgets)
+            {
+                <div class="budgetCard inactive p-3 d-flex align-items-center">
+                    <div class="budgetAvatar">
+                        @* <i class="bi @budget.IconClass"></i> *@
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="budgetBadge">@budget.CategoryName</span>
+                            <span class="amount">₹@budget.Amount.ToString("N2")</span>
+                        </div>
+                        <div class="mt-1 mb-2 meta">
+                            <i class="bi bi-calendar-event"></i>
+                            @budget.StartDate.ToString("yyyy-MM-dd") to @budget.EndDate.ToString("yyyy-MM-dd")
+                            &middot; <span class="periodPill">@budget.Period</span>
+                        </div>
+                        <div style="max-width: 500px;">
+                            <span class="text-secondary">@budget.Notes [In Trash]</span>
+                        </div>
+                    </div>
+                    <div class="ms-2 text-end">
+                        <div class="budgetActionBtns mt-2">
+                            <a href="#" class="btn btnRestore btn-sm rounded-pill" data-budget-id="@budget.BudgetId"
+                                title="Restore">
+                                <i class="bi bi-arrow-counterclockwise"></i> Restore
+                            </a>
+                            <a href="#" class="btn btn-outlineDanger btn-sm rounded-pill btnDeleteForever"
+                                data-budget-id="@budget.BudgetId" title="Delete Forever">
+                                <i class="bi bi-x-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="budgetFiller text-center p-4">
+                <div class="fillerIcon mb-3">
+                    <i class="bi bi-trash"></i>
+                </div>
+                <div class="fillerTitle mb-2">No Items in Trash</div>
+                <div class="fillerSubtitle text-muted">
+                    All caught up! No budgets in trash.
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/budgetPage.js"></script>
+}

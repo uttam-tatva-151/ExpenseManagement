@@ -1,0 +1,44 @@
+@{
+    Layout = Constants.MAIN_LAYOUT;
+    ViewData["Title"] = "Transaction Details";
+}
+
+
+<link rel="stylesheet" href="~/css/transactionPage.css" asp-append-version="true" />
+
+
+<div class="glassCard">
+    <div class="iconCircle mb-2">
+        <i class="bi bi-cart4"></i>
+    </div>
+    <div class="detailsTitle text-center mb-2">Transaction Details</div>
+    <ul class="detailsList">
+        <li>
+            <i class="bi bi-collection"></i>
+            <span class="categoryBadge">Groceries</span>
+            <span class="statusPill statusExpense"><i class="bi bi-arrow-down-circle"></i> Expense</span>
+        </li>
+        <li>
+            <i class="bi bi-cash"></i>
+            <span class="amountDetail amountExpense">-₹1,200.00</span>
+        </li>
+        <li>
+            <i class="bi bi-credit-card-2-front"></i>
+            <span>UPI</span>
+        </li>
+        <li>
+            <i class="bi bi-calendar-event"></i>
+            <span>2025-06-10</span>
+            <i class="bi bi-clock ms-3"></i>
+            <span>11:30 AM</span>
+        </li>
+    </ul>
+    <div class="descBox">
+        Bought weekly vegetables and fruits at local market.
+    </div>
+    <div class="d-grid mt-3">
+        <a href="edit-transaction-unique.html" class="btn btnGradient btn-lg rounded-pill">
+            <i class="bi bi-pencil-square"></i> Edit Transaction
+        </a>
+    </div>
+</div>

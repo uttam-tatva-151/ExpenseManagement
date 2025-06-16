@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bills – CashCanvas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      body {
+        background: radial-gradient(
+          circle at 70% 20%,
+          #e0f7fa 0%,
+          #fffde7 100%
+        );
+        font-family: "Segoe UI", "Arial", sans-serif;
+      }
+
+      .bills-section {
+        max-width: 900px;
+        margin: 38px auto 0 auto;
+      }
+
+      .bill-card {
+        background: #fff;
+        border-radius: 22px;
+        box-shadow: 0 6px 24px -8px #00796b33;
+        margin-bottom: 22px;
+        transition: transform 0.15s, box-shadow 0.15s;
+        position: relative;
+        overflow: hidden;
+        border-left: 8px solid #ffb300;
+      }
+
+      .bill-card:hover {
+        transform: translateY(-3px) scale(1.01);
+        box-shadow: 0 12px 32px -6px #ff980066;
+      }
+
+      .bill-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #26c6da 0%, #ffb300 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 2rem;
+        margin-right: 20px;
+      }
+
+      .bill-badge {
+        font-size: 0.99rem;
+        font-weight: 600;
+        border-radius: 12px;
+        padding: 5px 15px;
+        background: linear-gradient(90deg, #e0f7fa 0%, #fffde7 100%);
+        color: #00796b;
+      }
+
+      .amount {
+        font-weight: 700;
+        font-size: 1.24rem;
+        color: #ff6f00;
+      }
+
+      .meta {
+        font-size: 0.92rem;
+        color: #7e8a9d;
+      }
+
+      .bill-action-btns a {
+        margin-left: 10px;
+      }
+
+      .freq-pill,
+      .reminder-pill {
+        font-size: 0.9rem;
+        padding: 3px 12px;
+        border-radius: 12px;
+        font-weight: 600;
+      }
+
+      .freq-pill {
+        background: #fff8e1;
+        color: #ff9800;
+        border: 1px solid #ffe0b2;
+      }
+
+      .reminder-pill {
+        background: #e0f2f1;
+        color: #00796b;
+        border: 1px solid #b2dfdb;
+      }
+
+      .bill-card.inactive {
+        opacity: 0.6;
+        border-left: 8px solid #bdbdbd;
+      }
+
+      .trash-btn {
+        background: linear-gradient(90deg, #ffb300 0%, #ff7043 100%);
+        color: #fff !important;
+      }
+
+      .restore-btn {
+        background: linear-gradient(90deg, #26c6da 0%, #00bfae 100%);
+        color: #fff !important;
+      }
+
+      @media (max-width: 650px) {
+        .bill-card {
+          flex-direction: column !important;
+          align-items: stretch !important;
+        }
+
+        .bill-avatar {
+          margin-bottom: 12px;
+        }
+      }
+
+      .search-result-item {
+        background: #ffffff;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .search-panel .modal-dialog {
+        margin-top: 100px;
+      }
+
+      .search-panel input {
+        font-size: 1.2rem;
+        padding: 12px;
+      }
+
+      .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: #fffde7;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+      .filters-panel {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px 0;
+      }
+      .filters-panel select,
+      .filters-panel input {
+        min-width: 150px;
+      }
+      .filters-sidebar {
+        position: fixed;
+        top: 0;
+        right: -350px;
+        width: 320px;
+        height: 100%;
+        background: #ffffff;
+        transition: right 0.4s ease;
+        z-index: 1050;
+        border-left: 1px solid #ccc;
+        box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .filters-sidebar.open {
+        right: 0;
+      }
+
+      #filterOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(0, 0, 0, 0.3);
+        display: none;
+        z-index: 1040;
+      }
+
+      #filterOverlay.active {
+        display: block;
+      }
+
+      @media (max-width: 600px) {
+        .filters-sidebar {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bills-section">
+      <div
+        class="d-flex justify-content-between align-items-center mb-4 sticky-header"
+      >
+        <div>
+          <h2 class="fw-bold mb-1" style="color: #00796b">
+            <i class="bi bi-receipt-cutoff me-2"></i>Bills
+          </h2>
+          <div class="btn-group" role="group" aria-label="Bill View Toggle">
+            <button
+              id="btnShowMain"
+              class="btn btn-outline-warning active"
+              onclick="showMainList()"
+            >
+              <i class="bi bi-list-ul"></i> Main List
+            </button>
+            <button
+              id="btnShowTrash"
+              class="btn trash-btn"
+              onclick="showTrashList()"
+            >
+              <i class="bi bi-trash3"></i> Trash
+            </button>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+    <div class="mb-2">
+        <h2 class="fw-bold mb-1">
+            <i class="bi bi-cash-stack me-2"></i>Bills
+        </h2>
+        <div class="btn-group" role="group" aria-label="Bill View Toggle">
+            <button id="btnShowMain" class="btn btn-outline-primary active" onclick="showMainList()">
+                <i class="bi bi-list-ul"></i> Main List
+            </button>
+            <button id="btnShowTrash" class="btn btn-outline-primary trashBtn" onclick="showTrashList()">
+                <i class="bi bi-trash3"></i> Trash
+            </button>
+        </div>
+    </div>
+
+    <div class="d-flex gap-2 flex-wrap">
+        <!-- Filter Button -->
+        <button class="btn btn-outline-secondary" onclick="toggleFiltersPanel()">
+            <i class="bi bi-funnel-fill"></i> Filters
+        </button>
+
+        <!-- Search Button -->
+        <button class="btn btn-outline-secondary rounded-pill" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="bi bi-search"></i> Search
+        </button>
+
+        <!-- Import/Export Buttons -->
+        <div class="btn-group" role="group">
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#importBillsModal">
+                <i class="bi bi-upload"></i> Import
+            </button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exportBillsModal">
+                <i class="bi bi-download"></i> Export
+            </button>
+        </div>
+
+        <!-- New Bill Button -->
+        <a class="btn btn-primary rounded-pill px-4" asp-action="Create">
+            <i class="bi bi-plus-circle"></i> New Bill
+        </a>
+    </div>
+</div>
+
+
+        <!-- Sliding Filters Panel -->
+        <div id="filtersSidebar" class="filters-sidebar shadow-lg">
+          <div
+            class="filters-header d-flex justify-content-between align-items-center p-3 bg-light"
+          >
+            <h5 class="mb-0">
+              <i class="bi bi-funnel-fill"></i> Apply Filters
+            </h5>
+            <button class="btn-close" onclick="toggleFiltersPanel()"></button>
+          </div>
+          <div class="filters-body p-3">
+            <label class="form-label">Sort by</label>
+            <select
+              id="sortSelect"
+              class="form-select mb-3"
+              onchange="applyFilters()"
+            >
+              <option value="">Sort by</option>
+              <option value="name">Name</option>
+              <option value="amount">Amount</option>
+              <option value="due">Due Date</option>
+            </select>
+
+            <label class="form-label">Time Filter</label>
+            <select id="timeFilter" class="form-select mb-3" onchange="onTimeFilterChange()">
+              <option value="">Time Filter</option>
+              <option value="7days">Last 7 Days</option>
+              <option value="1month">Last Month</option>
+              <option value="custom">Custom Range</option>
+            </select>
+            <label class="form-label">Items per page</label>
+            <select
+              id="itemsPerPage"
+              class="form-select mb-3"
+              onchange="changeItemsPerPage()"
+            >
+              <option value="3">3 per page</option>
+              <option value="5">5 per page</option>
+              <option value="10">10 per page</option>
+            </select>
+
+            <button
+              class="btn btn-primary w-100"
+              onclick="toggleFiltersPanel()"
+            >
+              Apply Filters
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mainBillList">
+        <!-- Cards will be added dynamically -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="d-flex justify-content-center mt-4">
+        <nav>
+          <ul class="pagination" id="paginationControls"></ul>
+        </nav>
+      </div>
+
+      <div id="trashBillList" style="display: none">
+        <!-- Trash bills (future functionality) -->
+      </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div
+      class="modal fade search-panel"
+      id="searchModal"
+      tabindex="-1"
+      aria-labelledby="searchModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-warning-subtle">
+            <h5 class="modal-title" id="searchModalLabel">
+              <i class="bi bi-search"></i> Search Bills
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              type="text"
+              id="searchInput"
+              class="form-control mb-3"
+              placeholder="Type to search bills..."
+              onkeyup="filterSearchResults()"
+            />
+            <div id="searchResults"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div
+      class="modal fade"
+      id="customDateModal"
+      tabindex="-1"
+      aria-labelledby="customDateModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content shadow-lg">
+          <div class="modal-header">
+            <h5 class="modal-title" id="customDateModalLabel">
+              Select Custom Date Range
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <label for="modalFromDate" class="form-label">From Date</label>
+            <input type="date" id="modalFromDate" class="form-control mb-3" />
+            <label for="modalToDate" class="form-label">To Date</label>
+            <input type="date" id="modalToDate" class="form-control" />
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancel
+            </button>
+            <button class="btn btn-primary" onclick="applyCustomDateRange()">
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function onTimeFilterChange() {
+        const value = document.getElementById("timeFilter").value;
+
+        if (value === "custom") {
+          const modal = new bootstrap.Modal(
+            document.getElementById("customDateModal")
+          );
+          modal.show();
+        } else {
+          applyFilters(); // For 7days, 1month
+        }
+      }
+
+      function applyCustomDateRange() {
+        const from = document.getElementById("modalFromDate").value;
+        const to = document.getElementById("modalToDate").value;
+
+        if (!from || !to) {
+          alert("Please select both start and end dates.");
+          return;
+        }
+
+        // You can store these in hidden fields or handle directly
+        console.log("Applying custom filter:", from, to);
+
+        // Store in hidden inputs or global variables as needed
+        window.customFromDate = from;
+        window.customToDate = to;
+
+        const modal = bootstrap.Modal.getInstance(
+          document.getElementById("customDateModal")
+        );
+        modal.hide();
+
+        applyFilters();
+      }
+
+      function toggleFiltersPanel() {
+        const sidebar = document.getElementById("filtersSidebar");
+        const overlay = document.getElementById("filterOverlay");
+
+        const isOpen = sidebar.classList.contains("open");
+
+        if (isOpen) {
+          sidebar.classList.remove("open");
+          overlay.classList.remove("active");
+        } else {
+          sidebar.classList.add("open");
+          overlay.classList.add("active");
+        }
+      }
+      let currentPage = 1,
+        itemsPerPage = 3;
+      const billData = [
+        { name: "Rent", amount: 15000, due: "2025-06-30", elem: null },
+        { name: "Electricity", amount: 2200, due: "2025-06-20", elem: null },
+        { name: "Water", amount: 500, due: "2025-06-22", elem: null },
+        { name: "Internet", amount: 1100, due: "2025-06-10", elem: null },
+        { name: "Gas", amount: 800, due: "2025-06-19", elem: null },
+        { name: "Subscription", amount: 300, due: "2025-06-25", elem: null },
+      ];
+
+      function renderBillList() {
+        const container = document.getElementById("mainBillList");
+        container.innerHTML = "";
+        billData.forEach((b) => {
+          const div = document.createElement("div");
+          div.className = "bill-card p-3 d-flex align-items-center";
+          div.innerHTML = `
+          <div class="bill-avatar"><i class="bi bi-receipt-cutoff"></i></div>
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between">
+              <span class="bill-badge">${b.name}</span>
+              <span class="amount">₹${b.amount.toLocaleString()}.00</span>
+            </div>
+            <div class="meta"><i class="bi bi-calendar-event"></i> Due: ${
+              b.due
+            }</div>
+          </div>
+          <div><a href="#" class="btn btn-outline-info btn-sm">View</a></div>`;
+          b.elem = div;
+          container.appendChild(div);
+        });
+        displayBills();
+      }
+
+      function displayBills() {
+        const list = document.getElementById("mainBillList").children;
+        Array.from(list).forEach((card, i) => {
+          card.style.display =
+            i >= (currentPage - 1) * itemsPerPage &&
+            i < currentPage * itemsPerPage
+              ? "flex"
+              : "none";
+        });
+        renderPagination(list.length);
+      }
+
+      function renderPagination(totalItems) {
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const ul = document.getElementById("paginationControls");
+        ul.innerHTML = "";
+        if (totalPages < 2) return;
+        const addBtn = (txt, page, disabled) => {
+          const li = document.createElement("li");
+          li.className = "page-item" + (disabled ? " disabled" : "");
+          li.innerHTML = `<a class="page-link" href="#">${txt}</a>`;
+          if (!disabled)
+            li.onclick = (e) => {
+              e.preventDefault();
+              currentPage = page;
+              displayBills();
+            };
+          ul.appendChild(li);
+        };
+        addBtn("«", currentPage - 1, currentPage === 1);
+        for (let i = 1; i <= totalPages; i++) addBtn(i, i, false);
+        addBtn("»", currentPage + 1, currentPage === totalPages);
+      }
+
+      function changeItemsPerPage() {
+        itemsPerPage = +document.getElementById("itemsPerPage").value;
+        currentPage = 1;
+        displayBills();
+      }
+
+      function onTimeFilterChange() {
+        const sel = document.getElementById("timeFilter").value;
+        document.getElementById("fromDate").style.display =
+          sel === "custom" ? "block" : "none";
+        document.getElementById("toDate").style.display =
+          sel === "custom" ? "block" : "none";
+        applyFilters();
+      }
+
+      function applyFilters() {
+        // Placeholder: implement sort/time/custom filter logic here
+        // After filtering, re-render list and reset pagination
+        // Example: billData.sort(), filter by due date, etc.
+        renderBillList();
+      }
+
+      function filterSearchResults() {
+        const term = document.getElementById("searchInput").value.toLowerCase();
+        const res = document.getElementById("searchResults");
+        res.innerHTML = "";
+        const matches = billData.filter((b) =>
+          b.name.toLowerCase().includes(term)
+        );
+        if (!matches.length)
+          return (res.innerHTML =
+            '<div class="text-center text-muted">No match</div>');
+        matches.forEach((b) => {
+          const div = document.createElement("div");
+          div.className = "search-result-item d-flex justify-content-between";
+          div.innerHTML = `<div><strong>${b.name}</strong> <small>Due: ${b.due}</small></div>
+                         <button class="btn btn-outline-info btn-sm">View</button>`;
+          div.onclick = () => {
+            document
+              .getElementById("searchModal")
+              .querySelector(".btn-close")
+              .click();
+          };
+          res.appendChild(div);
+        });
+      }
+
+      window.onload = renderBillList;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

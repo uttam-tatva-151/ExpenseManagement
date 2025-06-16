@@ -1,0 +1,84 @@
+@model BudgetViewModel
+@{
+    ViewData["Title"] = "Edit Budget";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/budgetPage.css" />
+
+<div class="glassCard">
+    <div class="iconCircle mb-2">
+        <i class="bi bi-pencil-square"></i>
+    </div>
+    <div class="formTitle text-center mb-4">Edit Budget</div>
+
+    <form asp-action="EditBudget" asp-controller="Budget" method="post" autocomplete="off">
+        <input type="hidden" asp-for="BudgetId" />
+
+        <!-- Category -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-collection"></i> Category</label>
+            <select class="form-select" asp-for="CategoryId" required>
+                <option value="">Select category</option>
+                @foreach (CategoryViewModel category in ViewBag.Categories)
+                {
+                    <option value="@category.CategoryId" selected="@(Model.CategoryId == category.CategoryId)">
+                        @category.CategoryName
+                    </option>
+                }
+            </select>
+            <span class="text-danger" asp-validation-for="CategoryId"></span>
+        </div>
+
+        <!-- Amount -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-cash"></i> Amount</label>
+            <div class="input-group">
+                <input type="number" step="0.01" min="0" class="form-control" asp-for="Amount" required placeholder="Enter budget amount" />
+                <span class="input-group-text"><i class="bi bi-currency-rupee"></i></span>
+            </div>
+            <span class="text-danger" asp-validation-for="Amount"></span>
+        </div>
+
+        <!-- Period -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-repeat"></i> Period</label>
+            <select class="form-select" asp-for="Period" asp-items="Html.GetEnumSelectList<BudgetPeriod>()" required>
+                <option value="">Select period</option>
+            </select>
+            <span class="text-danger" asp-validation-for="Period"></span>
+        </div>
+
+        <!-- Start Date -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-calendar-event"></i> Start Date</label>
+            <input type="date" class="form-control" asp-for="StartDate" required />
+            <span class="text-danger" asp-validation-for="StartDate"></span>
+        </div>
+
+        <!-- End Date -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-calendar-check"></i> End Date</label>
+            <input type="date" class="form-control" asp-for="EndDate" required />
+            <span class="text-danger" asp-validation-for="EndDate"></span>
+        </div>
+
+        <!-- Notes -->
+        <div class="mb-3">
+            <label class="sectionLabel"><i class="bi bi-chat-text"></i> Notes</label>
+            <textarea class="form-control" asp-for="Notes" rows="2" placeholder="Write a note (optional)" style="max-height: 125px; min-height: 75px;"></textarea>
+            <span class="text-danger" asp-validation-for="Notes"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-grid">
+            <button type="submit" class="btn btnGradient btn-lg rounded-pill">
+                <i class="bi bi-save2"></i> Update Budget
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/js/budgetPage.js"></script>
+}

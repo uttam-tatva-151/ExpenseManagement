@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CashCanvas.Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/styles/overlayscrollbars.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/lib/adminLTE/css/adminlte.css" />
+    <!-- jQuery  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap Bundle  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SignalR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary overflow-hidden">
+    <!--begin::App Wrapper-->
+    @* <div id="globalError" class="alert alert-danger d-none"></div> *@
+    <div class="app-wrapper">
+        <partial name="_Navbar" />
+        <partial name="_Sidebar" />
+
+        <!--begin::App Main-->
+        <main class="app-main overflow-auto" style="height: 90vh;">
+            @RenderBody()
+            @* <i class="bi bi-cash-coin scrollbar-icon"></i>   *@
+        </main>
+    </div>
+    <script>
+        function blockBackNavigation() {
+            // Initial push to the history
+            history.pushState(null, document.title, window.location.href);
+
+            let blockNavigation = true;
+
+            window.onpopstate = function (event) {
+                if (blockNavigation) {
+                    const confirmLogout = confirm("If goes to the previous page, you will be logged out. Do you want to continue?");
+
+                    if (confirmLogout) {
+                        window.location.href = "/Authentication/Index"; // Redirect to login
+                    } else {
+                        // Push state again to trap the back button
+                        history.pushState(null, document.title, window.location.href);
+                    }
+                }
+            };
+        }
+
+        window.onload = function () {
+            blockBackNavigation();
+
+            // Keep pushing history every 0.5s to maintain stack
+            setInterval(function () {
+                history.pushState(null, document.title, window.location.href);
+            }, 500);
+        };
+    </script>
+
+    <!-- Toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- OverlayScrollbars -->
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
+        crossorigin="anonymous"></script>
+    <!-- AdminLTE -->
+    <script src="~/lib/adminLTE/js/adminlte.js"></script>
+    <!-- jQuery Validate -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <!-- jQuery Validate Unobtrusive -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    <script>
+        let ToastMessage = '@(TempData["ToastMessage"] ?? "")';
+        let ToastType = '@(TempData["ToastStatus"] ?? "")';
+        if (ToastMessage) {
+            showToast(ToastMessage, ToastType);
+        } 
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>
