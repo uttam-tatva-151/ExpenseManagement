@@ -6,13 +6,10 @@ using CashCanvas.Services.Interfaces;
 
 namespace CashCanvas.Services.Services;
 
-public class ErrorLogService : IErrorLogService
+public class ErrorLogService(IErrorLogRepository errorLogRepository) : IErrorLogService
 {
-    private readonly IErrorLogRepository _errorLogRepository;
-    public ErrorLogService(IErrorLogRepository errorLogRepository)
-    {
-        _errorLogRepository = errorLogRepository;
-    }
+    private readonly IErrorLogRepository _errorLogRepository = errorLogRepository;
+
     public async Task SaveErrorLogAsync(ErrorLogDTO errorLog)
     {
         if (string.IsNullOrWhiteSpace(errorLog.ExceptionType) ||

@@ -11,12 +11,20 @@ namespace CashCanvas.Common.ConstantHandler
         public const string USER_LIST = "User List";
         public const string TRANSACTION_LIST = "Transaction List";
         public const string BILL_LIST = "Bill List";
+        public const string PAYMENT_LIST = "Payment List";
         public const string BUDGET_LIST = "Budget List";
         public const string RESET_PASSWORD_TOKEN = "Reset Password Token";
         public const string WAITING_TOKEN = "Waiting Token";
         public const string MAPPING_RELATIONS = "Mapping Relations";
         public const string DEFAULT_ENTITY = "Entity";
         public const string PAGINATION = "Pagination Details";
+        #endregion
+        #region Database Actions
+        public const string DATABASE_ACTION_READ = "Read";
+        public const string DATABASE_ACTION_CREATE = "Create";
+        public const string DATABASE_ACTION_UPDATE = "Update";
+        public const string DATABASE_ACTION_DELETE = "Delete";
+
         #endregion
         #region  Email Subject
         public const string EMAIL_SUBJECT_FORGOT_PASSWORD = "Password Reset Request";
@@ -60,6 +68,8 @@ namespace CashCanvas.Common.ConstantHandler
         public const string DASHBOARD_VIEW = "Index";
         public const string USER_LIST_VIEW = "UserList";
         public const string LOGIN_VIEW = "Index";
+        public const string EXPORT_BILLS_VIEW = "BillListExport";
+        public const string EXPORT_TRANSACTION_VIEW = "TransactionsListExport";
         public const string ERROR_VIEW = "HttpStatusCodeHandler";
         public const string HOME_CONTROLLER = "Home";
         public const string LOGIN_CONTROLLER = "Authentication";

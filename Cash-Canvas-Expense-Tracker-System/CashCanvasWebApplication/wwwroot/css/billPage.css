@@ -126,7 +126,58 @@ body {
     color: #fff !important;
     border: none;
 }
-
+.btnSkipPeriod i {
+    margin-right: 4px;
+    color: #ff9900;
+    font-size: 1.1em;
+    vertical-align: middle;
+    transition: transform 0.2s;
+}
+.exportTypeBtn {
+    transition: background 0.22s, border-color 0.22s;
+    border-width: 2px;
+    outline: none;
+}
+.exportTypeBtn:focus, .exportTypeBtn.active {
+    border-color: #064663 !important;
+    background: #eaf3fa !important;
+    box-shadow: 0 0 0 2px #ECB36555;
+}
+.exportTypeBtn:hover {
+    border-color: #ECB365;
+    background: #fdf6ed;
+}
+.exportSelectIcon::after {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+}
+.exportTypeBtn.active .exportSelectIcon::after {
+    content: '\2713';
+    color: #fff;
+    background: #27ae60;
+    border-radius: 50%;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+}
+#exportConfirmBtn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+#importConfirmBtn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.btnSkipPeriod:hover i {
+    transform: scale(1.2) rotate(10deg);
+    color: #ffcc00;
+}
 .restoreBtn:hover {
     background: linear-gradient(90deg, #00bfae 0%, #26c6da 100%);
     color: #fff !important;
@@ -401,6 +452,63 @@ body {
     border: 1px solid #ced4da;
 }
 
+.reminderModalBackdrop {
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1055;
+}
+.reminderModal {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px #0003;
+    width: 340px;
+    max-width: 90vw;
+    padding: 0;
+    overflow: hidden;
+    animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+    from {transform: scale(0.92);}
+    to {transform: scale(1);}
+}
+.reminderModalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #064663;
+    color: #fff;
+    padding: 16px 20px 12px 20px;
+}
+.reminderModalTitle {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.closeModalBtn {
+    background: transparent;
+    border: none;
+    color: #ECB365;
+    font-size: 1.6em;
+    cursor: pointer;
+    line-height: 1;
+}
+.reminderModalBody {
+    padding: 22px 20px 12px 20px;
+}
+.reminderLabel {
+    font-size: 1.05em;
+    color: #064663;
+}
+.reminderQuickBtns .quickDayBtn {
+    margin-right: 6px;
+}
+.reminderModalFooter {
+    padding: 16px 20px 18px 20px;
+    text-align: right;
+}
 /* Responsive */
 @media (max-width: 650px) {
     .glassCard {

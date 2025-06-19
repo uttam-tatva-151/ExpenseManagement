@@ -22,6 +22,7 @@ public class AppDbContext : DbContext
     public virtual DbSet<Reminder> Reminders { get; set; }
     public virtual DbSet<Budget> Budgets { get; set; }
     public virtual DbSet<Payment> Payments { get; set; }
+    public virtual DbSet<Notifications> Notifications { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -82,6 +83,7 @@ public class AppDbContext : DbContext
             entity.Property(u => u.IsActive)
                 .HasDefaultValue(true)
                 .HasComment("Indicates if the user is active (for soft delete).");
+
         });
 
         modelBuilder.Entity<PasswordRecoveryToken>(entity =>
@@ -463,11 +465,12 @@ public class AppDbContext : DbContext
                 .IsRequired();
 
             entity.HasOne(e => e.Bill)
-                .WithMany()
+                .WithMany(b => b.Payments)
                 .HasForeignKey(e => e.BillId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
         });
+
         modelBuilder.Entity<Budget>(entity =>
         {
             entity.HasKey(e => e.BudgetId).HasName("budget_pkey");
@@ -506,10 +509,6 @@ public class AppDbContext : DbContext
                 .IsRequired()
                 .HasComment("Start date of the budget period.");
 
-            entity.Property(e => e.EndDate)
-                .IsRequired()
-                .HasComment("End date of the budget period.");
-
             entity.Property(e => e.Notes)
                 .HasMaxLength(300)
                 .HasComment("Optional notes about this budget.");
@@ -539,6 +538,44 @@ public class AppDbContext : DbContext
                 .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
         });
+        modelBuilder.Entity<Notifications>(entity =>
+            {
+                entity.ToTable("notifications"); // table name to match Postgres convention
+
+                entity.HasIndex(e => e.UserId).HasDatabaseName("idx_notifications_user_id");
+                entity.HasIndex(e => e.IsRead).HasDatabaseName("idx_notifications_is_read");
+                entity.HasIndex(e => e.Type).HasDatabaseName("idx_notifications_type");
+                entity.HasIndex(e => e.IsDeleted).HasDatabaseName("idx_notifications_is_deleted");
+
+                entity.Property(e => e.Type)
+                    .HasConversion<string>()
+                    .HasMaxLength(32)
+                    .IsRequired();
+
+                entity.Property(e => e.Title)
+                    .HasMaxLength(255)
+                    .IsRequired();
+
+                entity.Property(e => e.Meta)
+                    .HasColumnType("jsonb");
+
+                // Configure default values
+                entity.Property(e => e.IsRead)
+                    .HasDefaultValue(false);
+
+                entity.Property(e => e.IsDeleted)
+                    .HasDefaultValue(false);
+
+                entity.Property(e => e.CreatedAt)
+                    .HasDefaultValueSql("NOW()");
+
+                entity.HasOne<User>()
+                    .WithMany(u => u.Notifications) // Assuming User has a collection of Notifications
+                    .HasForeignKey(e => e.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+            });
+
 
 
 
@@ -634,7 +671,6 @@ public class AppDbContext : DbContext
                     Amount = 1000 + i * 10,
                     Period = BudgetPeriod.Monthly,
                     StartDate = baseTime,
-                    EndDate = baseTime.AddMonths(1),
                     CreatedAt = baseTime,
                     IsContinued = true
                 });

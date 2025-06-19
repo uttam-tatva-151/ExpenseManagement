@@ -169,17 +169,97 @@ $(function () {
     $("#categoryId").val(val);
   });
 
-  // function setTransactionType(type) {
-  //   document.getElementById("transactionType").value = type;
-  //   document.getElementById("btnIncome").classList.remove("active");
-  //   document.getElementById("btnExpense").classList.remove("active");
-  //   if (type === "Income") {
-  //     document.getElementById("btnIncome").classList.add("active");
-  //   } else {
-  //     document.getElementById("btnExpense").classList.add("active");
-  //   }
-  // }
-  // setTransactionType("Expense");
+  let selectedTransactionExportType = "";
+
+$("#exportTransactionBtn").on("click", function () {
+  $(".exportTypeBtn").removeClass("active");
+  $("#exportTransactionSelectedFormat").text("");
+  $("#exportTransactionConfirmBtn").prop("disabled", true);
+  selectedTransactionExportType = "";
+  $("#exportTransactionModal").modal("show");
+});
+
+$(".exportTypeBtn").on("click", function () {
+  let type = $(this).data("type");
+  $(".exportTypeBtn").removeClass("active");
+  $(this).addClass("active");
+  selectedTransactionExportType = type;
+  let label = $(this).find(".fw-bold").text();
+  $("#exportTransactionSelectedFormat").text("Selected: " + label);
+
+    $("#exportTransactionConfirmBtn").prop("disabled", false);
+
+});
+
+$("#exportTransactionConfirmBtn").on("click", function () {
+  if (selectedTransactionExportType === "pdf") {
+    window.location.href = '/Transaction/ExportPdf';
+    $("#exportTransactionModal").modal("hide");
+  }else if (selectedTransactionExportType === "csv") {
+    window.location.href = '/Transaction/ExportCsv';
+    $("#exportTransactionModal").modal("hide");
+  }else if (selectedTransactionExportType === "excel") {
+    window.location.href = '/Transaction/ExportExcel';
+    $("#exportTransactionModal").modal("hide");
+  } else {
+    alert("Please select a valid export format.");
+  }
+});
+
+
+
+  // Show Import Modal
+$('#importBtn').on('click', function () {
+  $('#importCsvFile').val('');
+  $('#importFileFeedback').addClass('d-none').text('');
+  $('#importConfirmBtn').prop('disabled', true);
+  $('#importModal').modal('show');
+});
+
+// Enable Import Now button only for valid CSV
+$('#importCsvFile').on('change', function () {
+  let file = this.files[0];
+  if (file && file.name.toLowerCase().endsWith('.csv')) {
+      $('#importConfirmBtn').prop('disabled', false);
+      $('#importFileFeedback').addClass('d-none').text('');
+  } else {
+      $('#importConfirmBtn').prop('disabled', true);
+      $('#importFileFeedback').removeClass('d-none').text('Please select a valid .csv file.');
+  }
+});
+
+// Handle Import Now click
+$('#importConfirmBtn').on('click', function () {
+  let fileInput = $('#importCsvFile')[0];
+  let file = fileInput.files[0];
+  if (!file || !file.name.toLowerCase().endsWith('.csv')) {
+      $('#importFileFeedback').removeClass('d-none').text('Please select a valid .csv file.');
+      return;
+  }
+
+  let formData = new FormData();
+  formData.append('file', file);
+
+  // Optionally, disable button to prevent double submit
+  $('#importConfirmBtn').prop('disabled', true);
+
+  $.ajax({
+      url: '/Import/ImportCsv', // Your endpoint
+      type: 'POST',
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function (response) {
+          $('#importModal').modal('hide');
+          alert('Import successful!');
+          // Optionally: refresh your table/data here
+      },
+      error: function (xhr) {
+          $('#importFileFeedback').removeClass('d-none').text('Import failed. Please check your CSV and try again.');
+          $('#importConfirmBtn').prop('disabled', false);
+      }
+  });
+});
 });
 const connection = new signalR.HubConnectionBuilder()
     .withUrl("/transactionHub")

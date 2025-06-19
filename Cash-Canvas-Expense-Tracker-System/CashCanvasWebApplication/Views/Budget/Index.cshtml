@@ -29,10 +29,10 @@
     </div>
 
     <!-- Main Budget List -->
-    <div id="mainBudgetList">
+    <div id="mainBudgetList" class="overflow-auto" style="max-height: 70vh; padding-right: 15px;">
         @if (mainBudgets.Any())
         {
-            @foreach (var budget in mainBudgets)
+            @foreach (BudgetViewModel budget in mainBudgets)
             {
                 <div class="budgetCard p-3 d-flex align-items-center">
                     <div class="budgetAvatar">
@@ -45,7 +45,7 @@
                         </div>
                         <div class="mt-1 mb-2 meta">
                             <i class="bi bi-calendar-event"></i>
-                            @budget.StartDate.ToString("yyyy-MM-dd") to @budget.EndDate.ToString("yyyy-MM-dd")
+                            @budget.StartDate.ToString("yyyy-MM-dd") 
                             &middot; <span class="periodPill">@budget.Period</span>
                         </div>
                         <div style="max-width: 500px;">
@@ -54,15 +54,15 @@
                     </div>
                     <div class="ms-2 text-end">
                         <div class="budgetActionBtns mt-2">
-                            <a asp-action="Edit" asp-route-id="@budget.BudgetId"
+                            <a asp-action="EditBudget" asp-controller="Budget" asp-route-id="@budget.BudgetId"
                                 class="btn btn-outlineSuccess btn-sm rounded-pill" title="Edit">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a asp-action="Details" asp-route-id="@budget.BudgetId"
-                                class="btn btn-outlineInfo btn-sm rounded-pill" title="View">
+                            <a class="btn btn-outlineInfo btn-sm rounded-pill btnShowDetails" data-budget-id="@budget.BudgetId" title="View">
                                 <i class="bi bi-eye"></i>
                             </a>
-                            <a href="#" class="btn btn-outlineDanger btn-sm rounded-pill btnMoveToTrash"
+                            <a class="btn btn-outlineDanger btn-sm rounded-pill btnMoveToTrash" data-bs-toggle="modal"
+                                data-bs-keyboard="false"
                                 data-budget-id="@budget.BudgetId" title="Move to Trash">
                                 <i class="bi bi-trash"></i>
                             </a>
@@ -87,10 +87,10 @@
     </div>
 
     <!-- Trash List -->
-    <div id="trashBudgetList" style="display:none;">
+    <div id="trashBudgetList" class="over-flow" style="display:none; max-height: 70vh; padding-right: 15px;" >
         @if (trashedBudgets.Any())
         {
-            @foreach (var budget in trashedBudgets)
+            @foreach (BudgetViewModel budget in trashedBudgets)
             {
                 <div class="budgetCard inactive p-3 d-flex align-items-center">
                     <div class="budgetAvatar">
@@ -103,25 +103,25 @@
                         </div>
                         <div class="mt-1 mb-2 meta">
                             <i class="bi bi-calendar-event"></i>
-                            @budget.StartDate.ToString("yyyy-MM-dd") to @budget.EndDate.ToString("yyyy-MM-dd")
+                            @budget.StartDate.ToString("yyyy-MM-dd") 
                             &middot; <span class="periodPill">@budget.Period</span>
                         </div>
                         <div style="max-width: 500px;">
                             <span class="text-secondary">@budget.Notes [In Trash]</span>
                         </div>
                     </div>
-                    <div class="ms-2 text-end">
+                    @* <div class="ms-2 text-end">
                         <div class="budgetActionBtns mt-2">
                             <a href="#" class="btn btnRestore btn-sm rounded-pill" data-budget-id="@budget.BudgetId"
                                 title="Restore">
                                 <i class="bi bi-arrow-counterclockwise"></i> Restore
                             </a>
-                            <a href="#" class="btn btn-outlineDanger btn-sm rounded-pill btnDeleteForever"
+                            <a class="btn btn-outlineDanger btn-sm rounded-pill btnDeleteForever" 
                                 data-budget-id="@budget.BudgetId" title="Delete Forever">
                                 <i class="bi bi-x-circle"></i>
                             </a>
                         </div>
-                    </div>
+                    </div> *@
                 </div>
             }
         }
@@ -140,6 +140,92 @@
     </div>
 </div>
 
+
+<!-- Modal for delete confirmation -->
+<div class="modal" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content" style="border-radius:20px;box-shadow:0 8px 32px rgba(78,84,200,0.18);border:none;">
+            <div class="modal-body text-center py-4" style="position:relative;">
+                <div style="margin-bottom:12px;">
+                    <span class="d-inline-flex align-items-center justify-content-center"
+                        style="width:54px;height:54px;background:linear-gradient(135deg,#ed6ea0 0%,#ec8c69 100%);border-radius:16px;box-shadow:0 4px 12px #ed6ea0;">
+                        <i class="bi bi-trash3" style="font-size:2.3rem;color:#fff;"></i>
+                    </span>
+                </div>
+                <div style="font-weight:800;font-size:1.32rem;color:#ed6ea0;letter-spacing:1px;">
+                    Delete Budget?
+                </div>
+                <div class="text-secondary" style="font-size:1.01rem;margin:8px 0 0 0;">
+                    This action is <span class="fw-bold text-danger">irreversible</span>.<br>
+                    Are you sure you want to delete this Budget?
+                </div>
+            </div>
+            <form method="post" asp-action="MoveToTrash" asp-controller="Budget" id="deleteBudgetForm">
+                <input type="hidden" id="budgetIdToDelete" name="id" value="" required>
+                <div class="modal-footer border-0 pt-0 justify-content-center">
+                    <button type="reset" class="btn btn-light rounded-pill px-4 me-1 border-0" data-bs-dismiss="modal"
+                        style="background:linear-gradient(90deg,#e0eaff 0%,#f4f8ff 100%);color:#3949ab;font-weight:600;">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btnGradient rounded-pill px-4 ms-1" id="confirmDeleteBtn"
+                        style="background:linear-gradient(90deg,#ed6ea0 0%,#ec8c69 100%);font-weight:700;border:none;">
+                        <i class="bi bi-trash3"></i> Delete
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Budget Details Modal -->
+<div class="detailsOverlayBg" id="budgetDetailsOverlayBg">
+    <div class="detailsOverlayPanel">
+        <button class="detailsOverlayClose" id="budgetDetailsOverlayClose" aria-label="Close overlay">
+            <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="glassCard"
+            style="background:transparent;box-shadow:none;padding:22px 18px 10px 18px;margin:0;max-width:460px;">
+            <div class="iconCircle mb-2">
+                <i class="bi bi-wallet2"></i>
+            </div>
+            <div class="detailsTitle text-center mb-2">Budget Details</div>
+            <ul class="detailsList">
+                <li>
+                    <span class="statusPill statusActive">
+                        <i class="bi bi-check-circle"></i>
+                        <span class="budgetStatus">Active</span>
+                    </span>
+                </li>
+                <li>
+                    <i class="bi bi-tags"></i>
+                    <span class="categoryName"></span>
+                </li>
+                <li>
+                    <i class="bi bi-cash-stack"></i>
+                    <span class="budgetAmount"></span>
+                </li>
+                <li>
+                    <i class="bi bi-calendar-range"></i>
+                    <span class="budgetPeriod"></span>
+                </li>
+                <li>
+                    <i class="bi bi-pencil"></i>
+                    <span class="budgetNotes"></span>
+                </li>
+            </ul>
+            <div class="d-grid mt-3">
+                <a href="#" class="btn btnGradient btn-lg rounded-pill editBudgetBtn">
+                    <i class="bi bi-pencil-square"></i> Edit Budget
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
+    <script>
+        const budgets = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model));
+    </script>
     <script src="~/js/budgetPage.js"></script>
 }

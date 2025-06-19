@@ -12,9 +12,9 @@ public class BudgetViewModel
     public decimal Amount { get; set; }
     public BudgetPeriod Period { get; set; } = BudgetPeriod.Monthly;
     public DateTime StartDate { get; set; } = DateTime.UtcNow;
-    public DateTime EndDate { get; set; } = DateTime.UtcNow.AddDays(30);
     public string? Notes { get; set; }
     public bool IsContinued { get; set; } = true;
+
     public DateTime CreatedAt { get; set; }
 
     public List<CategoryViewModel> Categories { get; set; } = [];

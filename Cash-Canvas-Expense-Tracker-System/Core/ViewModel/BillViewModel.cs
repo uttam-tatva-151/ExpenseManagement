@@ -34,8 +34,11 @@ public class BillViewModel
 
     [MaxLength(500, ErrorMessage = "Notes can't exceed 500 characters.")]
     public string? Notes { get; set; }
-
+    public DateTime LastUnpaidDueDate { get; set; } = DateTime.UtcNow;
+    public int TotalIntervals { get; set; } = 0;
+    public int MissedIntervals { get; set; } = 0;
     public bool IsContinued { get; set; } = true;
+    public bool IsPaid { get; set; } = false;
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 

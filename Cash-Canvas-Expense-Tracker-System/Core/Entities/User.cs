@@ -32,5 +32,6 @@ namespace CashCanvas.Core.Entities
 
         [Required]
         public bool IsActive { get; set; } = true;
+        public ICollection<Notifications> Notifications { get; set; } = new List<Notifications>(); // Navigation property for related notifications
     }
 }

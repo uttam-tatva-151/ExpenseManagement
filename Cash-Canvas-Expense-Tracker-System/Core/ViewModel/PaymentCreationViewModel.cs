@@ -10,10 +10,15 @@ public class PaymentCreationViewModel
 {
     [Required(ErrorMessage = "Bill ID is required.")]
     public Guid BillId { get; set; }
+    public Guid UserId { get; set; }
 
     [Required(ErrorMessage = "Amount paid is required.")]
     [Range(0.01, 9999999999999999.99, ErrorMessage = "Amount must be greater than 0.")]
     public decimal AmountPaid { get; set; }
+
+    [Required(ErrorMessage = "Payment date is required.")]
+    [DataType(DataType.Date)]
+    public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
 
     [Required(ErrorMessage = "Payment method is required.")]
     public PaymentMethod PaymentMethod { get; set; }

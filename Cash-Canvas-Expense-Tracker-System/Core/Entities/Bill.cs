@@ -49,8 +49,11 @@ namespace CashCanvas.Core.Entities
 
         [Required]
         public bool IsContinued { get; set; } = true;
+        public DateTime? NextDueDate { get; set; }
 
         [ForeignKey(nameof(UserId))]
         public virtual User User { get; set; } = null!;
+
+       public ICollection<Payment> Payments { get; set; } = new List<Payment>();
     }
 }

@@ -110,6 +110,9 @@ namespace CashCanvas.Data.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasComment("Timestamp when the bill was last modified.");
 
+                    b.Property<DateTime>("NextDueDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Notes")
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)");
@@ -151,6 +154,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 1",
@@ -164,6 +168,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 3, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 2",
@@ -177,6 +182,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 4, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 3",
@@ -190,6 +196,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 5, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 4",
@@ -203,6 +210,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 6, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 5",
@@ -216,6 +224,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 1",
@@ -229,6 +238,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 3, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 2",
@@ -242,6 +252,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 4, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 3",
@@ -255,6 +266,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 5, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 4",
@@ -268,6 +280,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 6, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 5",
@@ -281,6 +294,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 1",
@@ -294,6 +308,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 3, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 2",
@@ -307,6 +322,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 4, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 3",
@@ -320,6 +336,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 5, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 4",
@@ -333,6 +350,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 6, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 5",
@@ -346,6 +364,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 1",
@@ -359,6 +378,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 3, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 2",
@@ -372,6 +392,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 4, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 3",
@@ -385,6 +406,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 5, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 4",
@@ -398,6 +420,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 6, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 5",
@@ -411,6 +434,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 1",
@@ -424,6 +448,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 3, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 2",
@@ -437,6 +462,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 4, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 3",
@@ -450,6 +476,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 5, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 4",
@@ -463,6 +490,7 @@ namespace CashCanvas.Data.Migrations
                             DueDate = new DateTime(2024, 1, 6, 12, 0, 0, 0, DateTimeKind.Utc),
                             Frequency = "Monthly",
                             IsContinued = true,
+                            NextDueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Card",
                             ReminderDay = 2,
                             Title = "Bill 5",
@@ -491,10 +519,6 @@ namespace CashCanvas.Data.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasDefaultValueSql("now()")
                         .HasComment("Timestamp when the budget was created.");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasComment("End date of the budget period.");
 
                     b.Property<bool>("IsContinued")
                         .ValueGeneratedOnAdd()
@@ -544,7 +568,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1010m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000001"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -556,7 +579,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1020m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000002"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -568,7 +590,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1030m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000003"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -580,7 +601,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1040m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000004"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -592,7 +612,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1050m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000005"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -604,7 +623,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1010m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000006"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -616,7 +634,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1020m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000007"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -628,7 +645,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1030m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000008"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -640,7 +656,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1040m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000009"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -652,7 +667,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1050m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000010"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -664,7 +678,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1010m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000011"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -676,7 +689,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1020m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000012"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -688,7 +700,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1030m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000013"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -700,7 +711,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1040m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000014"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -712,7 +722,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1050m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000015"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -724,7 +733,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1010m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000016"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -736,7 +744,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1020m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000017"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -748,7 +755,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1030m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000018"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -760,7 +766,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1040m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000019"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -772,7 +777,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1050m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000020"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -784,7 +788,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1010m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000021"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -796,7 +799,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1020m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000022"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -808,7 +810,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1030m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000023"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -820,7 +821,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1040m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000024"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -832,7 +832,6 @@ namespace CashCanvas.Data.Migrations
                             Amount = 1050m,
                             CategoryId = new Guid("10000000-0000-0000-0000-000000000025"),
                             CreatedAt = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
-                            EndDate = new DateTime(2024, 2, 1, 12, 0, 0, 0, DateTimeKind.Utc),
                             IsContinued = true,
                             Period = "Monthly",
                             StartDate = new DateTime(2024, 1, 1, 12, 0, 0, 0, DateTimeKind.Utc),
@@ -1215,6 +1214,68 @@ namespace CashCanvas.Data.Migrations
                         {
                             t.HasComment("This table logs application errors and exception events. Each row stores the error details, including the message, stack trace, type, time of occurrence, status code, controller/action context, resolution status, and number of occurrences. Deduplication and counting of repeated errors is handled by triggers.");
                         });
+                });
+
+            modelBuilder.Entity("CashCanvas.Core.Entities.Notifications", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp with time zone")
+                        .HasDefaultValueSql("NOW()");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsRead")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Meta")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime?>("ModifyAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted")
+                        .HasDatabaseName("idx_notifications_is_deleted");
+
+                    b.HasIndex("IsRead")
+                        .HasDatabaseName("idx_notifications_is_read");
+
+                    b.HasIndex("Type")
+                        .HasDatabaseName("idx_notifications_type");
+
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("idx_notifications_user_id");
+
+                    b.ToTable("notifications", (string)null);
                 });
 
             modelBuilder.Entity("CashCanvas.Core.Entities.PasswordRecoveryToken", b =>
@@ -2789,6 +2850,15 @@ namespace CashCanvas.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("CashCanvas.Core.Entities.Notifications", b =>
+                {
+                    b.HasOne("CashCanvas.Core.Entities.User", null)
+                        .WithMany("Notifications")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("CashCanvas.Core.Entities.PasswordRecoveryToken", b =>
                 {
                     b.HasOne("CashCanvas.Core.Entities.User", "User")
@@ -2803,7 +2873,7 @@ namespace CashCanvas.Data.Migrations
             modelBuilder.Entity("CashCanvas.Core.Entities.Payment", b =>
                 {
                     b.HasOne("CashCanvas.Core.Entities.Bill", "Bill")
-                        .WithMany()
+                        .WithMany("Payments")
                         .HasForeignKey("BillId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -2866,6 +2936,16 @@ namespace CashCanvas.Data.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CashCanvas.Core.Entities.Bill", b =>
+                {
+                    b.Navigation("Payments");
+                });
+
+            modelBuilder.Entity("CashCanvas.Core.Entities.User", b =>
+                {
+                    b.Navigation("Notifications");
                 });
 #pragma warning restore 612, 618
         }

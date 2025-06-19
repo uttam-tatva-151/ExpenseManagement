@@ -1,5 +1,9 @@
+using CashCanvas.Core.Beans.Events;
 using CashCanvas.Services.Interfaces;
+using CashCanvas.Services.Jobs;
 using CashCanvas.Services.Services;
+using CashCanvas.Web.Events;
+using MediatR;
 
 namespace CashCanvas.Web.Extensions;
 
@@ -23,14 +27,23 @@ public static class ServiceExtensions
     /// </remarks>
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
+        services.AddHostedService<ReminderNotificationJob>();
         services.AddScoped<IErrorLogService, ErrorLogService>();
         services.AddScoped<IJWTService, JWTService>();
         services.AddScoped<IAuthenticationService, AuthenticationService>();
         services.AddScoped<ITransactionService, TransactionService>();
-        services.AddScoped<IBillService,BillService>();
-        services.AddScoped<IBudgetService,BudgetService>();
-                services.AddScoped<ICategoryService,CategoryService>();
-
+        services.AddScoped<IBillService, BillService>();
+        services.AddScoped<IBudgetService, BudgetService>();
+        services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<INotificationService, NotificationService>();
+        // Register MediatR for all relevant assemblies
+        services.AddMediatR(cfg =>
+        {
+            // Register handlers from any assembly containing these types
+            cfg.RegisterServicesFromAssemblyContaining<NotificationCreatedHandler>();
+            cfg.RegisterServicesFromAssemblyContaining<NotificationCreatedEvent>();
+            cfg.RegisterServicesFromAssemblyContaining<NotificationService>();
+        });
         return services;
     }
 }

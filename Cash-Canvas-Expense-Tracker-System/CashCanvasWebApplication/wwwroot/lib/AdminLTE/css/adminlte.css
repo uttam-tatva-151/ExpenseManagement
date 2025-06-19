@@ -14693,7 +14693,20 @@ html.maximized-card {
   text-overflow: ellipsis; 
   max-width: 100%; 
 }
-
+.toast.text-bg-light {
+  background: #fffbe7 !important;
+  border-left: 6px solid #ECB365 !important;
+  box-shadow: 0 2px 12px #0001;
+}
+.toast .bi {
+  vertical-align: middle;
+}
+.toast-body span {
+  color: #064663;
+}
+.toast .fw-bold {
+  color: #ECB365;
+}
 /* Tooltip text */
 .tooltip-custom::after {
   content: attr(data-tooltip); /* Tooltip text from data attribute */

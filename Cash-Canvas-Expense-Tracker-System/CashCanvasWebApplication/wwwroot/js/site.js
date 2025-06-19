@@ -84,3 +84,17 @@ function showToast(message, type) {
 //     return true;
 // };
 
+document.querySelectorAll('.section-toggle').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const section = btn.dataset.section;
+        document.querySelectorAll('.dropdown-submenu').forEach(sub => sub.classList.add('d-none'));
+        document.getElementById(`${section}List`).classList.toggle('d-none');
+    });
+});
+
+// Show all notifications modal
+document.getElementById("showAllNotificationsBtn").addEventListener("click", function() {
+    var modal = new bootstrap.Modal(document.getElementById('allNotificationsModal'));
+    modal.show();
+});

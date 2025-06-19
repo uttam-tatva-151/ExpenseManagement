@@ -46,7 +46,6 @@ namespace CashCanvas.Core.Entities
         [ForeignKey(nameof(UserId))]
         public virtual User User { get; set; } = null!;
 
-        [ForeignKey(nameof(BillId))]
-        public virtual Bill Bill { get; set; } = null!;
+        public  Bill Bill { get; set; } = null!;
     }
 }

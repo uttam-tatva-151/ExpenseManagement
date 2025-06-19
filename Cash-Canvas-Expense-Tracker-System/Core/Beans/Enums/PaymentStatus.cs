@@ -9,5 +9,9 @@ public enum PaymentStatus
     [EnumMember(Value = "Pending")]
     Pending,
     [EnumMember(Value = "Failed")]
-    Failed
+    Failed,
+    [EnumMember(Value = "Late")]
+    Late,
+    [EnumMember(Value = "Skipped")]
+    Skipped
 }

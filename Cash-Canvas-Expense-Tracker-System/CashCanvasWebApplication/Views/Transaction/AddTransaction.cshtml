@@ -63,9 +63,9 @@
                             <option value="@category.CategoryId">@category.CategoryName</option>
                         }
                     </select>
-                    <button type="button" class="btn customCategoryBtn" id="addCategoryBtn">
+                    <a type="button" class="btn customCategoryBtn" id="addCategoryBtn" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
                         <i class="bi bi-plus-circle me-1"></i> <span class="d-none d-md-inline">Add Category</span>
-                    </button>
+                    </a>
                 </div>
                     <span class="text-danger text-align-start" asp-validation-for="@newTransaction.CategoryId"></span>
 
@@ -96,4 +96,48 @@
             </div>
     </form>
 </div>
+
+<!-- Add Category Modal -->
+<div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content transactionCard p-4">
+
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold text-primary" id="addCategoryModalLabel">Add New Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form id="addCategoryForm">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="categoryName" class="form-label">Category Name</label>
+            <input type="text" class="form-control" id="categoryName" name="CategoryName" maxlength="50" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="type" class="form-label">Type</label>
+            <select class="form-select" id="type" name="Type" required>
+              <option value="">Select Type</option>
+              <option value="Income">Income</option>
+              <option value="Expense">Expense</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description (Optional)</label>
+            <textarea class="form-control" id="description" name="Description" maxlength="200" rows="2"></textarea>
+          </div>
+
+        </div>
+
+        <div class="modal-footer w-75 mx-auto border-0 d-flex justify-content-between">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn restoreBtn">Save Category</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
 <script src="~/js/transactionPage.js" asp-append-version="true"></script>

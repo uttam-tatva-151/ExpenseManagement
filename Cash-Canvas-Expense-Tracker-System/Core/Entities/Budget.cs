@@ -29,9 +29,6 @@ namespace CashCanvas.Core.Entities
         [Required]
         public DateTime StartDate { get; set; }
 
-        [Required]
-        public DateTime EndDate { get; set; }
-
         [StringLength(300)]
         public string? Notes { get; set; }
 

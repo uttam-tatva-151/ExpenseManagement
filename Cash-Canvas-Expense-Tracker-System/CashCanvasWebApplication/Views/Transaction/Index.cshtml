@@ -22,6 +22,15 @@
                 </button>
             </div>
         </div>
+        <!-- Import/Export Buttons -->
+        <div class="btn-group" role="group">
+            <button class="btn btn-outline-info" id="importBtn">
+                <i class="bi bi-download"></i> Import
+            </button>
+            <button class="btn btn-outline-success" id="exportTransactionBtn">
+                <i class="bi bi-download"></i> Export
+            </button>
+        </div>
         <a class="btn btn-primary rounded-pill px-4" asp-action="AddTransaction" asp-controller="Transaction"
             title="Add New Transaction">
             <i class="bi bi-plus-circle"></i> New Transaction
@@ -203,6 +212,8 @@
         </div>
     </div>
 </div>
+
+<!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-sm">
@@ -234,6 +245,95 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Export Transactions Modal -->
+<div class="modal fade" id="exportTransactionModal" tabindex="-1" aria-labelledby="exportTransactionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content exportModalContent">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exportTransactionModalLabel">
+                    <i class="bi bi-box-arrow-up-right"></i> Export Your Transactions
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted small mb-3">
+                    Choose a format to export your transactions.
+                    <span class="d-block d-md-inline">Each format serves a unique purpose!</span>
+                </p>
+                <div class="d-flex flex-column gap-3">
+                    <button type="button"
+                        class="exportTypeBtn btn btn-light border d-flex align-items-center justify-content-between p-3"
+                        data-type="csv" aria-label="Export as CSV">
+                        <span>
+                            <i class="bi bi-filetype-csv fs-4 text-success"></i>
+                            <span class="ms-2 fw-bold">CSV</span>
+                            <span class="d-block text-muted small ms-5">For spreadsheets &amp; Excel</span>
+                        </span>
+                        <span class="exportSelectIcon"></span>
+                    </button>
+                    <button type="button"
+                        class="exportTypeBtn btn btn-light border d-flex align-items-center justify-content-between p-3"
+                        data-type="excel" aria-label="Export as Excel">
+                        <span>
+                            <i class="bi bi-file-earmark-excel-fill fs-4 text-primary"></i>
+                            <span class="ms-2 fw-bold">Excel</span>
+                            <span class="d-block text-muted small ms-5">Best for analysis in MS Excel</span>
+                        </span>
+                        <span class="exportSelectIcon"></span>
+                    </button>
+                    <button type="button"
+                        class="exportTypeBtn btn btn-light border d-flex align-items-center justify-content-between p-3"
+                        data-type="pdf" aria-label="Export as PDF">
+                        <span>
+                            <i class="bi bi-file-earmark-pdf-fill fs-4 text-danger"></i>
+                            <span class="ms-2 fw-bold">PDF</span>
+                            <span class="d-block text-muted small ms-5">For sharing &amp; printing</span>
+                        </span>
+                        <span class="exportSelectIcon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <span id="exportTransactionSelectedFormat" class="text-primary small"></span>
+                <button type="button" class="btn btn-success" id="exportTransactionConfirmBtn" disabled>
+                    <i class="bi bi-download"></i> Export Now
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Import Transactions Modal -->
+<div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="importModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content importModalContent">
+      <div class="modal-header">
+        <h5 class="modal-title" id="importModalLabel">
+          <i class="bi bi-upload"></i> Import Transactions
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted small mb-3">
+          Upload a <span class="fw-bold">CSV file</span> to quickly import your expenses or transactions.<br>
+          <span class="text-success">Only .csv files are accepted.</span>
+        </p>
+        <form id="importForm" enctype="multipart/form-data">
+          <div class="mb-3">
+            <input class="form-control" type="file" id="importCsvFile" accept=".csv" required>
+          </div>
+          <div id="importFileFeedback" class="form-text text-danger d-none"></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="importConfirmBtn" disabled>
+          <i class="bi bi-upload"></i> Import Now
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 @section Scripts {
     <script>

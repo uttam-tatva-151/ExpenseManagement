@@ -1,0 +1,61 @@
+@model IEnumerable<PaymentHistoryViewModel>
+@if (!Model.Any())
+{
+    <tr>
+        <td colspan="5" class="text-center text-muted" style="font-style: italic;">
+            <i class="bi bi-info-circle"></i> No payment history found for this bill.
+        </td>
+    </tr>
+}
+else
+{
+    foreach (PaymentHistoryViewModel period in Model)
+    {
+        <tr>
+            <td>@period.PeriodStart.ToString("yyyy-MM-dd") - @period.PeriodEnd.ToString("yyyy-MM-dd")</td>
+            <td>
+                @if (period.IsPaid)
+                {
+                    <span class="text-success">Paid</span>
+                }
+                else if (period.IsSkipped)
+                {
+                    <span class="text-warning">Skipped</span>
+                }
+                else
+                {
+                    <span class="text-danger">Missed</span>
+                }
+            </td>
+            <td>
+                @if (period.PaidAmount.HasValue)
+                {
+                    @period.PaidAmount.Value.ToString("C")
+                }
+                else
+                {
+                    @("-")
+                }
+            </td>
+            <td>
+                @if (period.PaidDate.HasValue)
+                {
+                    @period.PaidDate.Value.ToString("yyyy-MM-dd")
+                }
+                else
+                {
+                    @("-")
+                }
+            </td>
+            <td>
+                @if (!period.IsPaid && !period.IsSkipped)
+                {
+                    <button class="btn btn-sm btn-outline-warning btnSkipPeriod"
+                            data-period-start="@period.PeriodStart.ToString("yyyy-MM-dd")">
+                        <i class="bi bi-skip-forward-fill"></i> Skip
+                    </button>
+                }
+            </td>
+        </tr>
+    }
+}

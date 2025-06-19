@@ -12,4 +12,5 @@ public interface ITransactionService
     Task<ResponseResult<bool>> UpdateTransactionAsync(TransactionViewModel transactionViewModel);
     Task<ResponseResult<bool>> DeleteTransactionAsync(Guid transactionId);
     Task<List<CategoryViewModel>> GetCategoryListAsync(Guid userId);
+    Task<List<TransactionExportViewModel>> GetExortTransactionAsync(Guid userId);
 }

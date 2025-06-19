@@ -10,10 +10,11 @@ using CashCanvas.Core.Beans.Enums;
 
 namespace CashCanvas.Services.Services;
 
-public class BudgetService(IUnitOfWork unitOfWork, ICategoryService categoryService) : IBudgetService
+public class BudgetService(IUnitOfWork unitOfWork, ICategoryService categoryService,INotificationService notificationService) : IBudgetService
 {
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
     private readonly ICategoryService _categoryService = categoryService;
+    private readonly INotificationService _notificationService = notificationService;
 
 
     public async Task<List<BudgetViewModel>> GetBudgetListAsync(Guid userId)
@@ -36,7 +37,6 @@ public class BudgetService(IUnitOfWork unitOfWork, ICategoryService categoryServ
                 Period = t.Period,
                 StartDate = t.StartDate,
                 CreatedAt = t.CreatedAt,
-                EndDate = t.EndDate,
                 IsContinued = t.IsContinued
             })];
             return result;
@@ -47,7 +47,7 @@ public class BudgetService(IUnitOfWork unitOfWork, ICategoryService categoryServ
         }
     }
 
-public async Task<ResponseResult<List<CategoryViewModel>>> AddBudgetAsync(BudgetViewModel newBudget)
+    public async Task<ResponseResult<List<CategoryViewModel>>> AddBudgetAsync(BudgetViewModel newBudget)
     {
         ResponseResult<List<CategoryViewModel>> response = new();
         try
@@ -66,14 +66,24 @@ public async Task<ResponseResult<List<CategoryViewModel>>> AddBudgetAsync(Budget
                 Notes = newBudget.Notes,
                 Period = newBudget.Period,
                 StartDate = newBudget.StartDate,
-                EndDate = newBudget.EndDate,
+                CreatedAt = DateTime.UtcNow,
                 IsContinued = newBudget.IsContinued
             };
+            budget.StartDate = budget.StartDate.ToUniversalTime();
             await _unitOfWork.Budgets.AddAsync(budget);
-            await _unitOfWork.CompleteAsync();
-            response.Data = await GetCategoryListAsync(newBudget.UserId);
-            response.Message = MessageHelper.GetSuccessMessageForAddOperation(Constants.BUDGET);
-            response.Status = ResponseStatus.Success;
+            int result = await _unitOfWork.CompleteAsync();
+            if (result > 0)
+            {
+                await _notificationService.SyncBudgetWithNotificationsAsync(budget.UserId, budget, Constants.DATABASE_ACTION_CREATE);
+                response.Data = await GetCategoryListAsync(newBudget.UserId);
+                response.Message = MessageHelper.GetSuccessMessageForAddOperation(Constants.BUDGET);
+                response.Status = ResponseStatus.Success;
+            }
+            else
+            {
+                response.Status = ResponseStatus.Failed;
+                response.Message = MessageHelper.GetErrorMessageForAddOperation(Constants.BUDGET);
+            }
             return response;
         }
         catch (Exception ex)
@@ -104,7 +114,6 @@ public async Task<ResponseResult<List<CategoryViewModel>>> AddBudgetAsync(Budget
                 Period = budget.Period,
                 StartDate = budget.StartDate,
                 CreatedAt = budget.CreatedAt,
-                EndDate = budget.EndDate,
                 IsContinued = budget.IsContinued,
                 Categories = categories
             };
@@ -140,17 +149,19 @@ public async Task<ResponseResult<List<CategoryViewModel>>> AddBudgetAsync(Budget
             existingBudget.CategoryId = budget.CategoryId;
             existingBudget.Notes = budget.Notes;
             existingBudget.Period = budget.Period;
-            existingBudget.StartDate = budget.StartDate;
-            existingBudget.EndDate = budget.EndDate;
+            existingBudget.StartDate = budget.StartDate.ToUniversalTime();
+            existingBudget.ModifiedAt = DateTime.UtcNow;
             existingBudget.IsContinued = budget.IsContinued;
 
             _unitOfWork.Budgets.Update(existingBudget);
+            
             int result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
-                response.Data = true;
-                response.Message = MessageHelper.GetSuccessMessageForUpdateOperation(Constants.BUDGET);
+                await _notificationService.SyncBudgetWithNotificationsAsync(budget.UserId, existingBudget, Constants.DATABASE_ACTION_UPDATE);
                 response.Status = ResponseStatus.Success;
+                response.Message = MessageHelper.GetSuccessMessageForUpdateOperation(Constants.BUDGET);
+                response.Data = true;
             }
             else
             {
@@ -186,10 +197,12 @@ public async Task<ResponseResult<List<CategoryViewModel>>> AddBudgetAsync(Budget
             }
             budget.IsContinued = false; // Mark as not continued instead of deleting
             budget.ModifiedAt = DateTime.UtcNow;
+
             _unitOfWork.Budgets.Update(budget);
             int result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
+                await _notificationService.SyncBudgetWithNotificationsAsync(budget.UserId, budget, Constants.DATABASE_ACTION_DELETE);
                 response.Data = true;
                 response.Message = MessageHelper.GetSuccessMessageForDeleteOperation(Constants.BUDGET);
                 response.Status = ResponseStatus.Success;

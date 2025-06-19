@@ -51,12 +51,12 @@ public class BudgetController(IBudgetService budgetService) : Controller
         }
         response = await _budgetService.AddBudgetAsync(newBuget);
         ToasterHelper.SetToastMessage(TempData, response.Message, response.Status);
-        return RedirectToAction("Index");
+        return RedirectToAction("Index", "Budget");
     }
 
     [HttpGet]
-    [Route("Budget/Edit/{budgetId}")]
-    public async Task<IActionResult> EditBudget(Guid budgetId)
+    [Route("Budget/Edit/{id}")]
+    public async Task<IActionResult> EditBudget(Guid id)
     {
         Guid userId = User.GetUserId();
         if (userId == Guid.Empty)
@@ -64,7 +64,7 @@ public class BudgetController(IBudgetService budgetService) : Controller
             ToasterHelper.SetToastMessage(TempData, MessageHelper.GetNotFoundMessage(Constants.USER), ResponseStatus.Warning);
             return RedirectToAction("Index", "Home");
         }
-        BudgetViewModel budget = await _budgetService.GetBudgetByIdAsync(budgetId);
+        BudgetViewModel budget = await _budgetService.GetBudgetByIdAsync(id);
         if (budget == null)
         {
             ToasterHelper.SetToastMessage(TempData, MessageHelper.GetNotFoundMessage(Constants.BUDGET), ResponseStatus.Warning);
@@ -76,27 +76,35 @@ public class BudgetController(IBudgetService budgetService) : Controller
     [HttpPost]
     public async Task<IActionResult> UpdateBudget(BudgetViewModel budget)
     {
+        Guid userId = User.GetUserId();
+        if (userId == Guid.Empty)
+        {
+            ToasterHelper.SetToastMessage(TempData, MessageHelper.GetNotFoundMessage(Constants.USER), ResponseStatus.Warning);
+            return RedirectToAction("Index", "Home");
+        }
+        budget.UserId = userId;
         if (budget == null || budget.BudgetId == Guid.Empty)
         {
             ToasterHelper.SetToastMessage(TempData, Messages.WARNING_INVALID_INPUT, ResponseStatus.Warning);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
         ResponseResult<bool> response = await _budgetService.UpdateBudgetAsync(budget);
         ToasterHelper.SetToastMessage(TempData, response.Message, response.Status);
+        ViewBag.Categories = await _budgetService.GetCategoryListAsync(userId);
         return View("EditBudget", budget);
     }
     [HttpPost]
-    [Route("Budget/MoveToTrash/{budgetId}")]
-    public async Task<IActionResult> MoveToTrash(Guid budgetId)
+    [Route("Budget/MoveToTrash/")]
+    public async Task<IActionResult> MoveToTrash(Guid id)
     {
-        if (budgetId == Guid.Empty)
+        if (id == Guid.Empty)
         {
             ToasterHelper.SetToastMessage(TempData, Messages.WARNING_INVALID_INPUT, ResponseStatus.Warning);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
-        ResponseResult<bool> response = await _budgetService.DeleteBudgetAsync(budgetId);
+        ResponseResult<bool> response = await _budgetService.DeleteBudgetAsync(id);
         ToasterHelper.SetToastMessage(TempData, response.Message, response.Status);
-        return RedirectToAction("Index");
+        return RedirectToAction("Index","Budget");
 
     }
 

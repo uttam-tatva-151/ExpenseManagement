@@ -1,0 +1,171 @@
+@model List<BillExportViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cash Canvas | Bills Export</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8fafc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .headerContainer {
+            background: linear-gradient(90deg, #064663 80%, #ECB365 100%);
+            color: #fff;
+            padding: 32px 0 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .logoPlaceholder {
+            position: absolute;
+            left: 40px;
+            top: 22px;
+            width: 70px;
+            height: 70px;
+            background: #fff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ECB365;
+            box-shadow: 0 2px 6px #0001;
+            overflow: hidden;
+        }
+
+        .logoImg {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 12px;
+            /* For a crisp black logo: */
+            filter: brightness(0) saturate(100%);
+        }
+
+        .mainTitle {
+            font-size: 2.2em;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .subTitle {
+            font-size: 1.1em;
+            color: #ECB365;
+            letter-spacing: 1.2px;
+            margin-bottom: 4px;
+        }
+
+        .billsTable {
+            width: 96%;
+            margin: 40px auto 24px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 12px #0001;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .billsTable th,
+        .billsTable td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e6e6e6;
+            text-align: left;
+        }
+
+        .billsTable th {
+            background: #eaf3fa;
+            color: #064663;
+            font-weight: 700;
+        }
+
+        .billsTable tr:last-child td {
+            border-bottom: none;
+        }
+
+        .billTitle {
+            font-weight: bold;
+            color: #064663;
+            font-size: 1.07em;
+        }
+
+        .footerContainer {
+            text-align: center;
+            color: #999;
+            font-size: 1em;
+            padding: 16px 0 7px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="headerContainer">
+        <div class="logoPlaceholder">
+            <img src="~/assets/images/Logo_for_Cash_Canvas.png" alt="Cash Canvas Logo" class="logoImg" />
+        </div>
+        <div class="mainTitle">Cash Canvas</div>
+        <div class="subTitle">Expense Tracker System</div>
+    </div>
+    <table class="billsTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Bill Title</th>
+                <th>Amount</th>
+                <th>Due Date</th>
+                <th>Frequency</th>
+                <th>Payment Method</th>
+                <th>Last Paid</th>
+                <th>Total Paid</th>
+                <th>Missed</th>
+                <th>Skipped</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                int i = 1;
+                foreach (BillExportViewModel bill in Model)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td class="billTitle">@bill.Title</td>
+                        <td>@bill.Amount.ToString("C2")</td>
+                        <td>@bill.DueDate.ToString("yyyy-MM-dd")</td>
+                        <td>@bill.Frequency</td>
+                        <td>@bill.PaymentMethod</td>
+                        <td>
+                            @(bill.LastPaidDate.HasValue? bill.LastPaidDate.Value.ToString("yyyy-MM-dd") : "—")
+                        </td>
+                        <td>@bill.TotalPaid.ToString("C2")</td>
+                        <td>@bill.MissedCount</td>
+                        <td>@bill.SkippedCount</td>
+                    </tr>
+                    i++;
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="10" style="text-align:center;color:#b71c1c;font-style:italic;">
+                        No bills found.
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="footerContainer">
+        &copy; 2025 Cash Canvas &mdash; Exported for offline use last 3 months records.
+    </div>
+</body>
+
+</html>

@@ -18,6 +18,7 @@ public interface IUnitOfWork : IDisposable
         IGenericRepository<Reminder> Reminders { get; }
         IGenericRepository<Budget> Budgets { get; }
         IGenericRepository<Payment> Payments { get; }
+        IGenericRepository<Notifications> Notifications { get; }
 
         Task<int> CompleteAsync();
     }

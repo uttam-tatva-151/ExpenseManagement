@@ -11,7 +11,7 @@ public class BillRepository(AppDbContext context) : IBillRepository
 
     public async Task<List<Bill>> GetFilteredBillsAsync(Guid userId, PaginationDetails pagination)
     {
-        IQueryable<Bill> query = _context.Bills.AsNoTracking().Where(t =>
+        IQueryable<Bill> query = _context.Bills.Include(b => b.Payments).AsNoTracking().Where(t =>
                 (t.IsContinued || (!t.IsContinued && t.ModifiedAt >= DateTime.UtcNow.AddDays(-30))) &&
                 t.UserId == userId
             );
@@ -71,4 +71,6 @@ public class BillRepository(AppDbContext context) : IBillRepository
 
         return await query.ToListAsync();
     }
+
+
 }

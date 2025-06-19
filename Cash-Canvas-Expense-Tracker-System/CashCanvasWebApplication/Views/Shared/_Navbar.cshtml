@@ -14,46 +14,73 @@
         <!--begin::End Navbar Links-->
         <ul class="navbar-nav ms-auto">
             <!--begin::Notifications Dropdown Menu-->
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-bs-toggle="dropdown" href="#">
-                    <i class="bi bi-bell-fill"></i>
-                    <span class="navbar-badge badge text-bg-warning">15</span>
+            <li class="nav-item dropdown" id="notificationDropdown">
+                <a class="nav-link position-relative" href="#" id="notificationBell" data-bs-toggle="dropdown"
+                    aria-expanded="false" aria-label="Notifications">
+                    <i class="bi bi-bell-fill fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning"
+                        id="notificationTotalCount">0</span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                    <span class="dropdown-item dropdown-header">15 Notifications</span>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="bi bi-envelope me-2"></i> 4 new messages
-                        <span class="float-end text-secondary fs-7">3 mins</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="bi bi-people-fill me-2"></i> 8 friend requests
-                        <span class="float-end text-secondary fs-7">12 hours</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="bi bi-file-earmark-fill me-2"></i> 3 new reports
-                        <span class="float-end text-secondary fs-7">2 days</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer"> See All Notifications </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0 shadow" style="min-width: 340px;">
+                    <div
+                        class="dropdown-header fw-bold fs-6 px-3 py-2 border-bottom d-flex justify-content-between align-items-center">
+                        <span>Notifications (<span id="notificationTotalHeader">0</span>)</span>
+                        <button class="btn btn-sm btn-link text-decoration-none p-0" id="markAllAsSeenBtn"
+                            title="Mark all as seen">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                    <div id="notificationSections">
+                        <!-- Reminders Section -->
+                        <a href="#"
+                            class="dropdown-item d-flex justify-content-between align-items-center section-toggle"
+                            data-section="reminders">
+                            <span><i class="bi bi-clock-history me-2"></i>Reminders</span>
+                            <span class="badge bg-info" id="remindersCount">0</span>
+                        </a>
+                        <div class="dropdown-submenu px-3 py-2 d-none" id="remindersList">
+                            <!-- Reminders notifications (partial view) -->
+                        </div>
+                        <!-- Milestones Section -->
+                        <a href="#"
+                            class="dropdown-item d-flex justify-content-between align-items-center section-toggle"
+                            data-section="milestones">
+                            <span><i class="bi bi-flag-fill me-2"></i>Milestones</span>
+                            <span class="badge bg-success" id="milestonesCount">0</span>
+                        </a>
+                        <div class="dropdown-submenu px-3 py-2 d-none" id="milestonesList">
+                            <!-- Milestones notifications (partial view) -->
+                        </div>
+                        <!-- Other Section -->
+                        <a href="#"
+                            class="dropdown-item d-flex justify-content-between align-items-center section-toggle"
+                            data-section="other">
+                            <span><i class="bi bi-three-dots me-2"></i>Other</span>
+                            <span class="badge bg-secondary" id="otherCount">0</span>
+                        </a>
+                        <div class="dropdown-submenu px-3 py-2 d-none" id="otherList">
+                            <!-- Other notifications (partial view) -->
+                        </div>
+                    </div>
+                    <div class="dropdown-divider my-0"></div>
+                    <button type="button" class="dropdown-item dropdown-footer text-center"
+                        id="showAllNotificationsBtn">
+                        See All Notifications
+                    </button>
                 </div>
             </li>
+
             <!--end::Notifications Dropdown Menu-->
             <!--begin::User Menu Dropdown-->
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <img src="~/assets/images/user_icon.png"
-                         class="user-image rounded-circle shadow"
-                         alt="User Image" />
+                    <img src="~/assets/images/user_icon.png" class="user-image rounded-circle shadow"
+                        alt="User Image" />
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                     <!--begin::User Image-->
                     <li class="user-header text-bg-primary">
-                        <img src="~/assets/images/user_icon.png"
-                             class="rounded-circle shadow"
-                             alt="User Image" />
+                        <img src="~/assets/images/user_icon.png" class="rounded-circle shadow" alt="User Image" />
                         <p>
                             @User.GetUserName()
                             <small>Member since @User.GetAccountCreatedOn()</small>
@@ -62,8 +89,10 @@
                     <!--end::User Image-->
                     <!--begin::Menu Footer-->
                     <li class="user-footer">
-                        <a asp-action="ChangePassword" asp-controller="Home" class="btn btn-default btn-flat">Change Password</a>
-                        <a asp-action="Logout" asp-controller="Authentication" class="btn btn-default btn-flat float-end">Sign out</a>
+                        <a asp-action="ChangePassword" asp-controller="Home" class="btn btn-default btn-flat">Change
+                            Password</a>
+                        <a asp-action="Logout" asp-controller="Authentication"
+                            class="btn btn-default btn-flat float-end">Sign out</a>
                     </li>
                     <!--end::Menu Footer-->
                 </ul>

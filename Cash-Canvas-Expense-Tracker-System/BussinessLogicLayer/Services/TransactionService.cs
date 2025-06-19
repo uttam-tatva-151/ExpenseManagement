@@ -11,10 +11,11 @@ using CashCanvas.Core.DTOs;
 
 namespace CashCanvas.Services.Services;
 
-public class TransactionService(IUnitOfWork unitOfWork,ICategoryService categoryService) : ITransactionService
+public class TransactionService(IUnitOfWork unitOfWork, ICategoryService categoryService, INotificationService notificationService) : ITransactionService
 {
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
     private readonly ICategoryService _categoryService = categoryService;
+    private readonly INotificationService _notificationService = notificationService;
     public async Task<List<TransactionViewModel>> GetTransactionListAsync(Guid userId)
     {
         try
@@ -45,11 +46,11 @@ public class TransactionService(IUnitOfWork unitOfWork,ICategoryService category
         }
     }
 
-        public async Task<List<CategoryViewModel>> GetCategoryListAsync(Guid userId)
+    public async Task<List<CategoryViewModel>> GetCategoryListAsync(Guid userId)
     {
         return await _categoryService.GetCategoryListAsync(userId);
     }
-public async Task<TransactionViewModel> GetTransactionByIdAsync(Guid transactionId)
+    public async Task<TransactionViewModel> GetTransactionByIdAsync(Guid transactionId)
     {
         try
         {
@@ -106,6 +107,7 @@ public async Task<TransactionViewModel> GetTransactionByIdAsync(Guid transaction
             {
                 if (result > 0)
                 {
+                    await _notificationService.SyncTransactionAffectingBudgetNotificationsAsync(transaction.UserId, transaction);
                     response.Status = ResponseStatus.Success;
                     response.Message = MessageHelper.GetSuccessMessageForAddOperation(Constants.TRANSACTION);
                     response.Data = await GetCategoryListAsync(transactionViewModel.UserId);
@@ -155,6 +157,7 @@ public async Task<TransactionViewModel> GetTransactionByIdAsync(Guid transaction
             int result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
+                await _notificationService.SyncTransactionAffectingBudgetNotificationsAsync(transaction.UserId, transaction);
                 response.Status = ResponseStatus.Success;
                 response.Message = MessageHelper.GetSuccessMessageForUpdateOperation(Constants.TRANSACTION);
                 response.Data = true;
@@ -194,6 +197,7 @@ public async Task<TransactionViewModel> GetTransactionByIdAsync(Guid transaction
             int result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
+                await _notificationService.SyncTransactionAffectingBudgetNotificationsAsync(transaction.UserId, transaction);
                 response.Status = ResponseStatus.Success;
                 response.Message = MessageHelper.GetSuccessMessageForDeleteOperation(Constants.TRANSACTION);
                 response.Data = true;
@@ -206,6 +210,33 @@ public async Task<TransactionViewModel> GetTransactionByIdAsync(Guid transaction
             }
             return response;
 
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(MessageHelper.GetErrorMessageForFeatchOperation(Constants.TRANSACTION_LIST), ex);
+        }
+    }
+
+    public async Task<List<TransactionExportViewModel>> GetExortTransactionAsync(Guid userId)
+    {
+        try
+        {
+            IEnumerable<Transaction> transactions = await _unitOfWork.Transactions.GetListAsync(
+                                                                    t => t.IsContinued &&
+                                                                             t.ModifiedAt >= DateTime.UtcNow.AddMonths(-3) &&
+                                                                        t.UserId == userId,
+                                                                    q => q.Include(x => x.Category));
+            List<TransactionExportViewModel> result = [.. transactions.Select(t => new TransactionExportViewModel()
+            {
+                Amount = t.Amount,
+                TransactionType = t.TransactionType,
+                PaymentMethod = t.PaymentMethod.ToString(),
+                Description = t.Description ?? string.Empty,
+                CategoryName = t.Category.CategoryName,
+                CreatedAt = t.CreatedAt,
+                TransactionDate = t.TransactionDate,
+            })];
+            return result;
         }
         catch (Exception ex)
         {

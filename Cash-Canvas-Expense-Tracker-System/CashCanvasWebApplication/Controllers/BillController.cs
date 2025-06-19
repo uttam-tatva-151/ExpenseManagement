@@ -1,9 +1,12 @@
+using System.Threading.Tasks;
 using CashCanvas.Common.ConstantHandler;
+using CashCanvas.Common.DocumentConverter;
 using CashCanvas.Common.TosterHandlers;
 using CashCanvas.Core.Beans;
 using CashCanvas.Core.Beans.Enums;
 using CashCanvas.Core.ViewModel;
 using CashCanvas.Services.Interfaces;
+using CashCanvas.Web.Extensions;
 using CashCanvas.Web.Middlewares;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,11 +24,15 @@ public class BillController(IBillService billService) : Controller
             return RedirectToAction("Index", "Home");
         }
         PaginationDetails pagination = new();
-        List<BillViewModel> bills = await _billService.GetAllBillsAsync(UserId,pagination);
+        List<BillViewModel> bills = await _billService.GetAllBillsAsync(UserId, pagination);
         ViewBag.Pagination = pagination;
         return View(bills);
     }
-
+    public async Task<IActionResult> GetPaymentHistoryTable(Guid billId)
+    {
+        List<PaymentHistoryViewModel> history = await _billService.GetPaymentHistory(billId);
+        return PartialView("PartialViews/_BillHistoryTableBody", history);
+    }
     [HttpGet]
     [Route("Bill/Create")]
     public IActionResult CreateBill()
@@ -88,6 +95,22 @@ public class BillController(IBillService billService) : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Route("Bill/PayBill")]
+    public async Task<IActionResult> BillPaid(PaymentCreationViewModel paymentViewModel)
+    {
+        if (paymentViewModel == null || paymentViewModel.BillId == Guid.Empty)
+        {
+            ToasterHelper.SetToastMessage(TempData, Messages.WARNING_INVALID_INPUT, ResponseStatus.Warning);
+            return RedirectToAction("Index");
+        }
+        paymentViewModel.UserId = User.GetUserId();
+        ResponseResult<bool> response = await _billService.PayBillAsync(paymentViewModel);
+        ToasterHelper.SetToastMessage(TempData, response.Message, response.Status);
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteBill(Guid id)
     {
         if (id == Guid.Empty)
@@ -98,5 +121,25 @@ public class BillController(IBillService billService) : Controller
         ResponseResult<bool> response = await _billService.MoveToTrashAsync(id);
         ToasterHelper.SetToastMessage(TempData, response.Message, response.Status);
         return RedirectToAction("Index");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> ExportPdf()
+    {
+
+        Guid UserId = User.GetUserId();
+        if (UserId == Guid.Empty)
+        {
+            ToasterHelper.SetToastMessage(TempData, MessageHelper.GetNotFoundMessage(Constants.USER), ResponseStatus.Warning);
+            return RedirectToAction("Index", "Home");
+        }
+        List<BillExportViewModel> bills = await _billService.GetExortBillsAsync(UserId);
+
+        string partialView = await this.RenderPartialViewToString(Constants.EXPORT_BILLS_VIEW, bills);
+
+        byte[] pdfArray = StringToPdfConverter.CreatePdf(partialView);
+        string fileName = $"Bills_{DateTime.Now:dd-MM-yy}.pdf";
+
+        return File(pdfArray, Constants.PDF_CONTENT_TYPE, fileName);
     }
 }

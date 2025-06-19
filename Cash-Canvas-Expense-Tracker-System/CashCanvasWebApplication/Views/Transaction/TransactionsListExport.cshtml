@@ -1,0 +1,143 @@
+@model List<TransactionExportViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Cash Canvas | Transactions Export</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8fafc;
+            margin: 0; padding: 0;
+        }
+        .headerContainer {
+            background: linear-gradient(90deg, #064663 80%, #ECB365 100%);
+            color: #fff;
+            padding: 32px 0 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        .logoPlaceholder {
+            position: absolute;
+            left: 40px; top: 22px;
+            width: 70px; height: 70px;
+            background: #fff;
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            border: 2px solid #ECB365;
+            box-shadow: 0 2px 6px #0001;
+            overflow: hidden;
+        }
+        .logoImg {
+            width: 65px; 
+            height: 65px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 12px;
+            filter: brightness(0) saturate(100%);
+        }
+        .mainTitle {
+            font-size: 2.2em;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .subTitle {
+            font-size: 1.1em;
+            color: #ECB365;
+            letter-spacing: 1.2px;
+            margin-bottom: 4px;
+        }
+        .transactionsTable {
+            width: 96%;
+            margin: 40px auto 24px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 12px #0001;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .transactionsTable th, .transactionsTable td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e6e6e6;
+            text-align: left;
+        }
+        .transactionsTable th {
+            background: #eaf3fa;
+            color: #064663;
+            font-weight: 700;
+        }
+        .transactionsTable tr:last-child td {
+            border-bottom: none;
+        }
+        .footerContainer {
+            text-align: center;
+            color: #999;
+            font-size: 1em;
+            padding: 16px 0 7px 0;
+        }
+        .expense { color: #b71c1c; font-weight:700;}
+        .income { color: #2e7d32; font-weight:700;}
+    </style>
+</head>
+<body>
+    <div class="headerContainer">
+        <div class="logoPlaceholder">
+            <img src="~/assets/images/Logo_for_Cash_Canvas.png" alt="Cash Canvas Logo" class="logoImg" />
+        </div>
+        <div class="mainTitle">Cash Canvas</div>
+        <div class="subTitle">Bank Statement / Transactions Export</div>
+    </div>
+    <table class="transactionsTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Payment Method</th>
+                <th>Amount</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                int i = 1;
+                foreach (var txn in Model)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@txn.TransactionDate.ToString("yyyy-MM-dd")</td>
+                        <td class="@(txn.TransactionType == "Expense" ? "expense" : "income")">
+                            @txn.TransactionType
+                        </td>
+                        <td>@txn.CategoryName</td>
+                        <td>@txn.Description</td>
+                        <td>@txn.PaymentMethod</td>
+                        <td>@txn.Amount.ToString("C2")</td>
+                        <td>@txn.CreatedAt.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                    i++;
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="8" style="text-align:center;color:#b71c1c;font-style:italic;">
+                        No transactions found.
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="footerContainer">
+        &copy; 2025 Cash Canvas &mdash; Exported as bank/transaction statement.
+    </div>
+</body>
+</html>

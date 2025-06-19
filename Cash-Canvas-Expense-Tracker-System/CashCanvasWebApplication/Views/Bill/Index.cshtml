@@ -36,13 +36,11 @@
                 <i class="bi bi-search"></i> Search
             </button>
 
-            <!-- Import/Export Buttons -->
+            <!-- Export Buttons -->
             <div class="btn-group" role="group">
-                <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#importBillsModal">
-                    <i class="bi bi-upload"></i> Import
+                <button class="btn btn-outline-success" id="exportBtn">
+                    <i class="bi bi-download"></i> Export
                 </button>
-                <button class="btn btn-outline-success">
-                    <i class="bi bi-download"></i> Export</button>
             </div>
 
             <!-- New Bill Button -->
@@ -59,6 +57,90 @@
 
 </div>
 
+<div class="modal" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="historyModalLabel">Bill Payment History</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Status</th>
+                            <th>Amount Paid</th>
+                            <th>Paid Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Export Bills Modal -->
+<div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="exportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content exportModalContent">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exportModalLabel">
+                    <i class="bi bi-box-arrow-up-right"></i> Export Your Data
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted small mb-3">
+                    Choose a format to export your bills.
+                    <span class="d-block d-md-inline">Each format serves a unique purpose!</span>
+                </p>
+                <div class="d-flex flex-column gap-3">
+                    <button type="button"
+                        class="exportTypeBtn btn btn-light border d-flex align-items-center justify-content-between p-3"
+                        data-type="csv" aria-label="Export as CSV">
+                        <span>
+                            <i class="bi bi-filetype-csv fs-4 text-success"></i>
+                            <span class="ms-2 fw-bold">CSV</span>
+                            <span class="d-block text-muted small ms-5">For spreadsheets &amp; Excel</span>
+                        </span>
+                        <span class="exportSelectIcon"></span>
+                    </button>
+                    <button type="button"
+                        class="exportTypeBtn btn btn-light border d-flex align-items-center justify-content-between p-3"
+                        data-type="excel" aria-label="Export as Excel">
+                        <span>
+                            <i class="bi bi-file-earmark-excel-fill fs-4 text-primary"></i>
+                            <span class="ms-2 fw-bold">Excel</span>
+                            <span class="d-block text-muted small ms-5">Best for analysis in MS Excel</span>
+                        </span>
+                        <span class="exportSelectIcon"></span>
+                    </button>
+                    <button type="button"
+                        class="exportTypeBtn btn btn-light border d-flex align-items-center justify-content-between p-3"
+                        data-type="pdf" aria-label="Export as PDF">
+                        <span>
+                            <i class="bi bi-file-earmark-pdf-fill fs-4 text-danger"></i>
+                            <span class="ms-2 fw-bold">PDF</span>
+                            <span class="d-block text-muted small ms-5">For sharing &amp; printing</span>
+                        </span>
+                        <span class="exportSelectIcon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <span id="exportSelectedFormat" class="text-primary small"></span>
+                <button type="button" class="btn btn-success" id="exportConfirmBtn" disabled>
+                    <i class="bi bi-download"></i> Export Now
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Search Modal -->
 <div class="modal searchPanel" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -81,7 +163,7 @@
 <!-- Filter Overlay -->
 <div class="detailsOverlayBg" id="filterOverlayBg">
     <div class="detailsOverlayPanel">
-        <button class="detailsOverlayClose" onclick="toggleFiltersPanel()" aria-label="Close overlay">
+        <button class="detailsOverlayClose" aria-label="Close overlay">
             <i class="bi bi-x-lg"></i>
         </button>
 
@@ -228,7 +310,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="markAsPaidForm">
+                <form id="markAsPaidForm" asp-action="BillPaid" asp-controller="Bill" method="post">
                     <input type="hidden" id="billId" name="BillId" value="">
                     <div class="mb-3">
                         <label for="amountPaid" class="form-label" style="color: #7e8a9d; font-size: 0.92rem;">Amount
@@ -241,7 +323,8 @@
                     <div class="mb-3">
                         <label for="paymentMethod" class="form-label"
                             style="color: #7e8a9d; font-size: 0.92rem;">Payment Method</label>
-                        <select class="form-select" id="paymentMethod" name="PaymentMethod" required asp-items="Html.GetEnumSelectList<PaymentMethod>()"
+                        <select class="form-select" id="paymentMethod" name="PaymentMethod" required
+                            asp-items="Html.GetEnumSelectList<PaymentMethod>()"
                             style="border-radius: 12px; border: 1px solid #b2dfdb; color: #00796b;">
                             <option value="" disabled selected>Select payment method</option>
                         </select>
@@ -257,9 +340,9 @@
             </div>
             <div class="modal-footer"
                 style="border-top: none; background: linear-gradient(90deg, #e0f7fa 0%, #fffde7 100%);">
-                <button type="button" class="btn" data-bs-dismiss="modal"
+                <button type="reset" form="markAsPaidForm" class="btn"
                     style="background: #eceff1; color: #616161; border-radius: 12px; padding: 8px 20px;">Cancel</button>
-                <button type="button" class="btn" id="submitPayment"
+                <button type="submit" form="markAsPaidForm" class="btn" id="submitPayment"
                     style="background: linear-gradient(90deg, #ffb300 0%, #ff7043 100%); color: #fff; border-radius: 12px; padding: 8px 20px;">Confirm
                     Payment</button>
             </div>
@@ -267,6 +350,49 @@
     </div>
 </div>
 
+<!-- Modal for capturing reminders -->
+<div class="reminderModalBackdrop" id="reminderModalBackdrop" style="display:none;">
+    <div class="reminderModal" id="reminderModal">
+        <div class="reminderModalHeader">
+            <span class="reminderModalTitle">Set Bill Reminder</span>
+            <button class="closeModalBtn" id="closeReminderModalBtn" type="button" aria-label="Close">&times;</button>
+        </div>
+        <div class="reminderModalBody">
+            <form id="reminderForm">
+                <label for="reminderDaysInput" class="reminderLabel mb-2">
+                    Remind me <input type="number" min="1" max="365" id="reminderDaysInput" class="reminderDaysInput" value="2" style="width:64px;" />
+                    day(s) before due date
+                </label>
+                <div class="reminderQuickBtns mb-3">
+                    Quick: 
+                    <button type="button" class="quickDayBtn btn btn-outline-info btn-sm" data-days="2">2</button>
+                    <button type="button" class="quickDayBtn btn btn-outline-info btn-sm" data-days="3">3</button>
+                    <button type="button" class="quickDayBtn btn btn-outline-info btn-sm" data-days="5">5</button>
+                </div>
+                <input type="hidden" id="reminderBillId" />
+            </form>
+        </div>
+        <div class="reminderModalFooter">
+            <button type="button" class="btn btn-success saveReminderBtn" id="saveReminderBtn">Save Reminder</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast for Coming Soon Feature -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+  <div id="comingSoonToast" class="toast align-items-center text-bg-light border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body d-flex align-items-center">
+        <i class="bi bi-clock-history text-warning fs-4 me-3"></i>
+        <span class="messageToShowInTosast">
+          <span class="fw-bold">Feature Coming Soon:</span><br>
+          <span id="comingSoonMsg">This export option will be available in a future update. Thank you for your patience!</span>
+        </span>
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
 <!--Custom date Range-->
 <div class="modal" id="customDateModal" tabindex="-1" aria-labelledby="customDateModalLabel" aria-hidden="true">
     <div class="modal-dialog">

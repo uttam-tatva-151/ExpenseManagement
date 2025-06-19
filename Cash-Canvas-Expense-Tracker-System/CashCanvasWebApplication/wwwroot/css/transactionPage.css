@@ -346,6 +346,72 @@
     cursor: pointer;
     z-index: 2;
 }
+#exportTransactionModal .export-spinner-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    pointer-events: all;
+}
+
+/* Unique spinner animation */
+.export-spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #064663;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: exportspin 1s linear infinite;
+}
+
+@keyframes exportspin {
+    0% { transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.exportTypeBtn {
+    transition: background 0.22s, border-color 0.22s;
+    border-width: 2px;
+    outline: none;
+}
+.exportTypeBtn:focus, .exportTypeBtn.active {
+    border-color: #064663 !important;
+    background: #eaf3fa !important;
+    box-shadow: 0 0 0 2px #ECB36555;
+}
+.exportTypeBtn:hover {
+    border-color: #ECB365;
+    background: #fdf6ed;
+}
+.exportSelectIcon::after {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+}
+.exportTypeBtn.active .exportSelectIcon::after {
+    content: '\2713';
+    color: #fff;
+    background: #27ae60;
+    border-radius: 50%;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+}
+#exportConfirmBtn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+#importConfirmBtn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 /* Responsive */
 @media (max-width: 650px) {
     .glassCard {

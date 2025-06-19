@@ -1,10 +1,12 @@
 using CashCanvas.Common.ConstantHandler;
+using CashCanvas.Common.DocumentConverter;
 using CashCanvas.Common.TosterHandlers;
 using CashCanvas.Core.Beans;
 using CashCanvas.Core.Beans.Enums;
 using CashCanvas.Core.DTOs;
 using CashCanvas.Core.ViewModel;
 using CashCanvas.Services.Interfaces;
+using CashCanvas.Web.Extensions;
 using CashCanvas.Web.Hubs;
 using CashCanvas.Web.Middlewares;
 using Microsoft.AspNetCore.Mvc;
@@ -120,4 +122,23 @@ public class TransactionController(ITransactionService transactionService, IHubC
         });
     }
 
+    [HttpGet]
+    public async Task<IActionResult> ExportPdf()
+    {
+
+        Guid UserId = User.GetUserId();
+        if (UserId == Guid.Empty)
+        {
+            ToasterHelper.SetToastMessage(TempData, MessageHelper.GetNotFoundMessage(Constants.USER), ResponseStatus.Warning);
+            return RedirectToAction("Index", "Home");
+        }
+        List<TransactionExportViewModel> transactions = await _transactionService.GetExortTransactionAsync(UserId);
+
+        string partialView = await this.RenderPartialViewToString(Constants.EXPORT_TRANSACTION_VIEW, transactions);
+
+        byte[] pdfArray = StringToPdfConverter.CreatePdf(partialView);
+        string fileName = $"Transactions_{DateTime.Now:dd-MM-yy}.pdf";
+
+        return File(pdfArray, Constants.PDF_CONTENT_TYPE, fileName);
+    }
 }

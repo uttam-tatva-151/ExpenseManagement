@@ -18,6 +18,7 @@ namespace CashCanvas.Data.UnitOfWork
         public IGenericRepository<Reminder> Reminders { get; }
         public IGenericRepository<Budget> Budgets { get; }
         public IGenericRepository<Payment> Payments { get; }
+        public IGenericRepository<Notifications> Notifications { get; }
         public IUserRepository CustomUserRepository { get; }
         public IBillRepository CustomBillRepository { get; }
 
@@ -35,6 +36,7 @@ namespace CashCanvas.Data.UnitOfWork
             Reminders = new GenericRepository<Reminder>(_context);
             Budgets = new GenericRepository<Budget>(_context);
             Payments = new GenericRepository<Payment>(_context);
+            Notifications = new GenericRepository<Notifications>(_context);
         }
 
         public async Task<int> CompleteAsync() => await _context.SaveChangesAsync();
