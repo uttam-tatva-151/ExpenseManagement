@@ -158,6 +158,7 @@ public class BudgetService(IUnitOfWork unitOfWork, ICategoryService categoryServ
             int result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
+                existingBudget.Category = await _unitOfWork.Categories.GetByIdAsync(existingBudget.CategoryId)??new();
                 await _notificationService.SyncBudgetWithNotificationsAsync(budget.UserId, existingBudget, Constants.DATABASE_ACTION_UPDATE);
                 response.Status = ResponseStatus.Success;
                 response.Message = MessageHelper.GetSuccessMessageForUpdateOperation(Constants.BUDGET);

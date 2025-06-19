@@ -89,7 +89,24 @@ body {
 #toast-container > .toast .toast-close-button:hover {
   opacity: 1;
 }
+.paginationBtn {
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  font-weight: 500;
+  box-shadow: none;
+  outline: none;
+}
 
+.paginationBtn:focus,
+.paginationBtn:active {
+  background-color: #e6f0ff;
+  color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.25);
+}
+
+.paginationBtn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 @keyframes slideUpSnackbar {
   from {
       transform: translateY(80px) translateX(-10%);

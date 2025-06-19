@@ -35,6 +35,7 @@ public static class ServiceExtensions
         services.AddScoped<IBillService, BillService>();
         services.AddScoped<IBudgetService, BudgetService>();
         services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<IDashboardService, DashboardService>();
         services.AddScoped<INotificationService, NotificationService>();
         // Register MediatR for all relevant assemblies
         services.AddMediatR(cfg =>

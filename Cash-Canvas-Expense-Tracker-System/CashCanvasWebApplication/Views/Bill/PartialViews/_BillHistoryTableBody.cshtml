@@ -51,7 +51,7 @@ else
                 @if (!period.IsPaid && !period.IsSkipped)
                 {
                     <button class="btn btn-sm btn-outline-warning btnSkipPeriod"
-                            data-period-start="@period.PeriodStart.ToString("yyyy-MM-dd")">
+                        data-period-start="@period.PeriodStart.ToString("yyyy-MM-dd")">
                         <i class="bi bi-skip-forward-fill"></i> Skip
                     </button>
                 }
@@ -59,3 +59,6 @@ else
         </tr>
     }
 }
+<script>
+    const history = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model));
+</script>

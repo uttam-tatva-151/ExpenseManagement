@@ -54,7 +54,14 @@
         @await Html.PartialAsync("PartialViews/_BillList", Model)
     </div>
 
-
+<div class="d-flex justify-content-center align-items-center mt-4" id="billPagination">
+    <button class="btn btn-outline-primary me-2 paginationBtn" id="prevBtnBillPage" disabled>
+        <i class="bi bi-chevron-left"></i> Previous
+    </button>
+    <button class="btn btn-outline-primary paginationBtn" id="nextBtnBillPage">
+        Next <i class="bi bi-chevron-right"></i>
+    </button>
+</div>
 </div>
 
 <div class="modal" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
@@ -360,11 +367,12 @@
         <div class="reminderModalBody">
             <form id="reminderForm">
                 <label for="reminderDaysInput" class="reminderLabel mb-2">
-                    Remind me <input type="number" min="1" max="365" id="reminderDaysInput" class="reminderDaysInput" value="2" style="width:64px;" />
+                    Remind me <input type="number" min="1" max="365" id="reminderDaysInput" class="reminderDaysInput"
+                        value="2" style="width:64px;" />
                     day(s) before due date
                 </label>
                 <div class="reminderQuickBtns mb-3">
-                    Quick: 
+                    Quick:
                     <button type="button" class="quickDayBtn btn btn-outline-info btn-sm" data-days="2">2</button>
                     <button type="button" class="quickDayBtn btn btn-outline-info btn-sm" data-days="3">3</button>
                     <button type="button" class="quickDayBtn btn btn-outline-info btn-sm" data-days="5">5</button>
@@ -380,18 +388,20 @@
 
 <!-- Toast for Coming Soon Feature -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
-  <div id="comingSoonToast" class="toast align-items-center text-bg-light border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="d-flex">
-      <div class="toast-body d-flex align-items-center">
-        <i class="bi bi-clock-history text-warning fs-4 me-3"></i>
-        <span class="messageToShowInTosast">
-          <span class="fw-bold">Feature Coming Soon:</span><br>
-          <span id="comingSoonMsg">This export option will be available in a future update. Thank you for your patience!</span>
-        </span>
-      </div>
-      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    <div id="comingSoonToast" class="toast align-items-center text-bg-light border-0 shadow" role="alert"
+        aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body d-flex align-items-center">
+                <i class="bi bi-clock-history text-warning fs-4 me-3"></i>
+                <span class="messageToShowInTosast">
+                    <span class="fw-bold">Feature Coming Soon:</span><br>
+                    <span id="comingSoonMsg">This export option will be available in a future update. Thank you for your
+                        patience!</span>
+                </span>
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
     </div>
-  </div>
 </div>
 <!--Custom date Range-->
 <div class="modal" id="customDateModal" tabindex="-1" aria-labelledby="customDateModalLabel" aria-hidden="true">

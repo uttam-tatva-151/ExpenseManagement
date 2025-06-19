@@ -13,4 +13,7 @@ public interface ITransactionService
     Task<ResponseResult<bool>> DeleteTransactionAsync(Guid transactionId);
     Task<List<CategoryViewModel>> GetCategoryListAsync(Guid userId);
     Task<List<TransactionExportViewModel>> GetExortTransactionAsync(Guid userId);
+    Task<byte[]> ExportTransactionsToExcel(Guid userID);
+    Task<byte[]> ExportTransactionsToCsv(Guid userID);
+    Task<ResponseResult<bool>> ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId);
 }

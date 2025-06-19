@@ -1,0 +1,6 @@
+CategoryName,Amount,TransactionType,PaymentMethod,Description,TransactionDate
+Groceries,120.50,Expense,Cash,Supermarket shopping,2024-06-10
+Salary,2500,Income,UPI,June Salary,2024-06-01
+Utilities,75.20,Expense,Card,Electricity bill,2024-06-05
+Freelance,400,Income,Card,Website project,2024-06-03
+Snacks,15.75,Expense,Cash,Coffee shop,2024-06-08

@@ -366,7 +366,45 @@
     height: 50px;
     animation: exportspin 1s linear infinite;
 }
-
+.downloadTemplateBtn {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 0.8rem;
+    z-index: 10;
+    border-radius: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    background: linear-gradient(90deg, #005bea 0%, #3ec6e0 100%);
+    color: #fff;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .downloadTemplateBtn i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .downloadTemplateBtn:hover {
+    animation: shake 0.4s;
+    background: linear-gradient(90deg, #3ec6e0 0%, #005bea 100%);
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    transform: scale(1.06);
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+  }
 @keyframes exportspin {
     0% { transform: rotate(0deg);}
     100% {transform: rotate(360deg);}

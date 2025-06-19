@@ -9,4 +9,5 @@ public class PaymentHistoryViewModel
     public decimal? PaidAmount { get; set; }
     public DateTime? PaidDate { get; set; }
     public Guid? PaymentId { get; set; }
+    public Guid BillId { get; set; }
 }

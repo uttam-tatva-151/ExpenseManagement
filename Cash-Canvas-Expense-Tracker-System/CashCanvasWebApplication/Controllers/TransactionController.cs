@@ -141,4 +141,60 @@ public class TransactionController(ITransactionService transactionService, IHubC
 
         return File(pdfArray, Constants.PDF_CONTENT_TYPE, fileName);
     }
+
+    [HttpGet]
+    public async Task<IActionResult> ExportExcel()
+    {
+
+        Guid userId = User.GetUserId();
+
+        byte[] fileBytes = await _transactionService.ExportTransactionsToExcel(userId);
+        string fileName = $"Transactions_{DateTime.Now:dd-MM-yy}.xlsx";
+
+        return File(fileBytes, Constants.EXCEL_CONTENT_TYPE, fileName);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> ExportCsv()
+    {
+
+        Guid userId = User.GetUserId();
+
+        byte[] fileBytes = await _transactionService.ExportTransactionsToCsv(userId);
+        string fileName = $"Transactions_{DateTime.Now:dd-MM-yy}.csv";
+
+        return File(fileBytes, Constants.CSV_CONTENT_TYPE, fileName);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ImportTransactions(IFormFile file)
+    {
+        if (file == null || file.Length == 0)
+            return BadRequest("No file uploaded.");
+
+        Guid userId = User.GetUserId();
+
+        using MemoryStream memoryStream = new();
+        await file.CopyToAsync(memoryStream);
+        memoryStream.Position = 0;
+
+        ResponseResult<bool> result = await _transactionService.ImportTransactionsFromCsvAsync(memoryStream, userId);
+
+        return Json(new { message = result.Message, status = result.Status });
+    }
+
+
+    [HttpGet]
+    public IActionResult DownloadCsvTemplate()
+    {
+        // Path to your template file
+        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "templates", "TransactionTemplate.csv");
+
+        if (!System.IO.File.Exists(filePath))
+            return NotFound();
+
+        var bytes = System.IO.File.ReadAllBytes(filePath);
+        var fileName = "TransactionTemplate.csv";
+        return File(bytes, Constants.CSV_CONTENT_TYPE, fileName);
+    }
 }

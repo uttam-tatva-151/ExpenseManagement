@@ -1192,3 +1192,947 @@
 │ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in f:\.net\CashCanvasExpenseManagementHub\New folder\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
 └────────────────────────────────────────────────────────────────────────┘
 
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T03:59:51.623Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : UpdateBudget                                           │
+│ Error Message   : An error occurred while updating Budget. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BudgetService.UpdateBudgetAsync(BudgetViewModel budget) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BudgetService.cs:line 176│
+│ at CashCanvas.Web.Controllers.BudgetController.UpdateBudget(BudgetViewModel budget) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BudgetController.cs:line 91│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T04:03:07.923Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : UpdateBudget                                           │
+│ Error Message   : An error occurred while updating Budget. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BudgetService.UpdateBudgetAsync(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BudgetService.cs:line 176│
+│ at CashCanvas.Web.Controllers.BudgetController.UpdateBudget(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BudgetController.cs:line 91│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T04:03:39.462Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : UpdateBudget                                           │
+│ Error Message   : An error occurred while updating Budget. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BudgetService.UpdateBudgetAsync(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BudgetService.cs:line 176│
+│ at CashCanvas.Web.Controllers.BudgetController.UpdateBudget(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BudgetController.cs:line 91│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T04:04:02.782Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : UpdateBudget                                           │
+│ Error Message   : An error occurred while updating Budget. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BudgetService.UpdateBudgetAsync(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BudgetService.cs:line 176│
+│ at CashCanvas.Web.Controllers.BudgetController.UpdateBudget(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BudgetController.cs:line 91│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T04:05:17.208Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : UpdateBudget                                           │
+│ Error Message   : An error occurred while updating Budget. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BudgetService.UpdateBudgetAsync(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BudgetService.cs:line 176│
+│ at CashCanvas.Web.Controllers.BudgetController.UpdateBudget(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BudgetController.cs:line 91│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T04:08:01.436Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : UpdateBudget                                           │
+│ Error Message   : An error occurred while updating Budget. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BudgetService.UpdateBudgetAsync(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BudgetService.cs:line 177│
+│ at CashCanvas.Web.Controllers.BudgetController.UpdateBudget(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BudgetController.cs:line 91│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T04:10:40.729Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : UpdateBudget                                           │
+│ Error Message   : An error occurred while updating Budget. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BudgetService.UpdateBudgetAsync(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BudgetService.cs:line 177│
+│ at CashCanvas.Web.Controllers.BudgetController.UpdateBudget(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BudgetController.cs:line 91│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T04:15:45.723Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : UpdateBudget                                           │
+│ Error Message   : An error occurred while updating Budget. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BudgetService.UpdateBudgetAsync(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BudgetService.cs:line 177│
+│ at CashCanvas.Web.Controllers.BudgetController.UpdateBudget(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BudgetController.cs:line 91│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T04:16:13.983Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : UpdateBudget                                           │
+│ Error Message   : An error occurred while updating Budget. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BudgetService.UpdateBudgetAsync(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BudgetService.cs:line 177│
+│ at CashCanvas.Web.Controllers.BudgetController.UpdateBudget(BudgetViewModel budget) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BudgetController.cs:line 91│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T04:16:54.305Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : Exception                                              │
+│ Controller Name : Budget                                                 │
+│ Action Name     : UpdateBudget                                           │
+│ Error Message   : An error occurred while updating Budget. Please try again.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.BudgetService.UpdateBudgetAsync(BudgetViewModel budget) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\BudgetService.cs:line 177│
+│ at CashCanvas.Web.Controllers.BudgetController.UpdateBudget(BudgetViewModel budget) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\BudgetController.cs:line 91│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T05:03:10.119Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : NotSupportedException                                  │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ExportCsv                                              │
+│ Error Message   : Cannot apply binary operation on types 'timestamp with time zone' and 'timestamp without time zone', convert one of the operands first.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Query.NpgsqlSqlExpressionFactory.ApplyTypeMapping(SqlExpression sqlExpression, RelationalTypeMapping typeMapping)│
+│ at Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory.ApplyTypeMappingOnSqlBinary(SqlBinaryExpression sqlBinaryExpression, RelationalTypeMapping typeMapping)│
+│ at Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory.ApplyTypeMapping(SqlExpression sqlExpression, RelationalTypeMapping typeMapping)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Query.NpgsqlSqlExpressionFactory.ApplyTypeMappingOnSqlBinary(SqlBinaryExpression binary, RelationalTypeMapping typeMapping)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Query.NpgsqlSqlExpressionFactory.ApplyTypeMapping(SqlExpression sqlExpression, RelationalTypeMapping typeMapping)│
+│ at Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory.MakeBinary(ExpressionType operatorType, SqlExpression left, SqlExpression right, RelationalTypeMapping typeMapping)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Query.NpgsqlSqlExpressionFactory.MakeBinary(ExpressionType operatorType, SqlExpression left, SqlExpression right, RelationalTypeMapping typeMapping)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.VisitBinary(BinaryExpression binaryExpression)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Query.Internal.NpgsqlSqlTranslatingExpressionVisitor.VisitBinary(BinaryExpression binaryExpression)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.VisitBinary(BinaryExpression binaryExpression)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Query.Internal.NpgsqlSqlTranslatingExpressionVisitor.VisitBinary(BinaryExpression binaryExpression)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.TranslateInternal(Expression expression, Boolean applyDefaultTypeMapping)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.Translate(Expression expression, Boolean applyDefaultTypeMapping)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateExpression(Expression expression, Boolean applyDefaultTypeMapping)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLambdaExpression(ShapedQueryExpression shapedQueryExpression, LambdaExpression lambdaExpression)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateWhere(ShapedQueryExpression source, LambdaExpression predicate)│
+│ at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)│
+│ at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)│
+│ at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)│
+│ at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)│
+│ at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)│
+│ at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)│
+│ at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)│
+│ at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)│
+│ at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()│
+│ at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)│
+│ at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)│
+│ at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()│
+│ at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)│
+│ at CashCanvas.Data.BaseRepository.GenericRepository`1.GetListAsync(Expression`1 predicate, Func`2 include, Boolean asNoTracking) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\DataAccessLayer\BaseRepository\GenericRepository.cs:line 77│
+│ at CashCanvas.Services.Services.TransactionService.ExportTransactionsToCsv(Guid userID) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 139│
+│ at CashCanvas.Web.Controllers.TransactionController.ExportCsv() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 163│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()│
+│ --- End of stack trace from previous location ---                        │
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T05:13:57.129Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : LicenseContextPropertyObsoleteException                │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ExportExcel                                            │
+│ Error Message   : Please use the static 'ExcelPackage.License' property to set the required license information from EPPlus 8 and later versions. For more info see http://epplussoftware.com/developers/licensenotsetexception.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at OfficeOpenXml.ExcelPackage.set_LicenseContext(Nullable`1 value)       │
+│ at CashCanvas.Services.Services.TransactionService.ExportTransactionsToExcel(Guid userID) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 183│
+│ at CashCanvas.Web.Controllers.TransactionController.ExportExcel() in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 151│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T05:14:56.159Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : LicenseContextPropertyObsoleteException                │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ExportExcel                                            │
+│ Error Message   : Please use the static 'ExcelPackage.License' property to set the required license information from EPPlus 8 and later versions. For more info see http://epplussoftware.com/developers/licensenotsetexception.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at OfficeOpenXml.ExcelPackage.set_LicenseContext(Nullable`1 value)       │
+│ at CashCanvas.Services.Services.TransactionService.ExportTransactionsToExcel(Guid userID) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 183│
+│ at CashCanvas.Web.Controllers.TransactionController.ExportExcel() in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 151│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T05:16:01.393Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : LicenseContextPropertyObsoleteException                │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ExportExcel                                            │
+│ Error Message   : Please use the static 'ExcelPackage.License' property to set the required license information from EPPlus 8 and later versions. For more info see http://epplussoftware.com/developers/licensenotsetexception.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at OfficeOpenXml.ExcelPackage.set_LicenseContext(Nullable`1 value)       │
+│ at CashCanvas.Services.Services.TransactionService.ExportTransactionsToExcel(Guid userID) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 183│
+│ at CashCanvas.Web.Controllers.TransactionController.ExportExcel() in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 151│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T05:25:05.913Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : LicenseNotSetException                                 │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ExportExcel                                            │
+│ Error Message   : Please set the license using one of the methods on the static property ExcelPackage.License. See https://epplussoftware.com/developers/licensenotsetexception for more information│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at OfficeOpenXml.ExcelPackage.get_Workbook()                             │
+│ at OfficeOpenXml.ExcelPackage.CreateBlankWb()                            │
+│ at OfficeOpenXml.ExcelPackage.ConstructNewFile(String password)          │
+│ at OfficeOpenXml.ExcelPackage..ctor()                                    │
+│ at CashCanvas.Services.Services.TransactionService.ExportTransactionsToExcel(Guid userID) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 182│
+│ at CashCanvas.Web.Controllers.TransactionController.ExportExcel() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 151│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T05:26:09.052Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : LicenseContextPropertyObsoleteException                │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ExportExcel                                            │
+│ Error Message   : Please use the static 'ExcelPackage.License' property to set the required license information from EPPlus 8 and later versions. For more info see http://epplussoftware.com/developers/licensenotsetexception.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at OfficeOpenXml.ExcelPackage.set_LicenseContext(Nullable`1 value)       │
+│ at CashCanvas.Services.Services.TransactionService.ExportTransactionsToExcel(Guid userID)│
+│ at CashCanvas.Web.Controllers.TransactionController.ExportExcel() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 151│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T05:26:48.179Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : LicenseContextPropertyObsoleteException                │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ExportExcel                                            │
+│ Error Message   : Please use the static 'ExcelPackage.License' property to set the required license information from EPPlus 8 and later versions. For more info see http://epplussoftware.com/developers/licensenotsetexception.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at OfficeOpenXml.ExcelPackage.set_LicenseContext(Nullable`1 value)       │
+│ at CashCanvas.Services.Services.TransactionService.ExportTransactionsToExcel(Guid userID)│
+│ at CashCanvas.Web.Controllers.TransactionController.ExportExcel() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 151│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T05:44:13.574Z                               │
+│ Status Code     : 404                                                    │
+│ Exception Type  : FileNotFoundException                                  │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ExportExcel                                            │
+│ Error Message   : Cant find file.                                        │
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at OfficeOpenXml.Drawing.ExcelDrawings.ValidatePictureFile(String Name, FileInfo ImageFile)│
+│ at OfficeOpenXml.Drawing.ExcelDrawings.AddPicture(String Name, FileInfo ImageFile, Uri Hyperlink)│
+│ at OfficeOpenXml.Drawing.ExcelDrawings.AddPicture(String Name, String ImagePath)│
+│ at CashCanvas.Services.Services.TransactionService.ExportTransactionsToExcel(Guid userID) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 190│
+│ at CashCanvas.Web.Controllers.TransactionController.ExportExcel() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 151│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T05:45:30.718Z                               │
+│ Status Code     : 404                                                    │
+│ Exception Type  : FileNotFoundException                                  │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ExportExcel                                            │
+│ Error Message   : Cant find file.                                        │
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at OfficeOpenXml.Drawing.ExcelDrawings.ValidatePictureFile(String Name, FileInfo ImageFile)│
+│ at OfficeOpenXml.Drawing.ExcelDrawings.AddPicture(String Name, FileInfo ImageFile, Uri Hyperlink)│
+│ at OfficeOpenXml.Drawing.ExcelDrawings.AddPicture(String Name, String ImagePath)│
+│ at CashCanvas.Services.Services.TransactionService.ExportTransactionsToExcel(Guid userID) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 190│
+│ at CashCanvas.Web.Controllers.TransactionController.ExportExcel() in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 151│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T06:01:30.388Z                               │
+│ Status Code     : 409                                                    │
+│ Exception Type  : InvalidOperationException                              │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ExportExcel                                            │
+│ Error Message   : Can't delete/overwrite merged cells. A range is partly merged with the another merged range. E2:F5│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at OfficeOpenXml.ExcelWorksheet.MergeCellsCollection.Clear(ExcelAddressBase Destination)│
+│ at OfficeOpenXml.ExcelRangeBase.set_Merge(Boolean value)                 │
+│ at CashCanvas.Services.Services.TransactionService.ExportTransactionsToExcel(Guid userID)│
+│ at CashCanvas.Web.Controllers.TransactionController.ExportExcel() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 151│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T06:55:47.085Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : InvalidDataException                                   │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ImportTransactions                                     │
+│ Error Message   : Invalid data at row 3: Invalid PaymentMethod 'Bank' at row 3.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.TransactionService.CreateTransactionFromCsvRowAsync(String[] fields, Guid userId, Int32 rowNumber) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 275│
+│ at CashCanvas.Services.Services.TransactionService.ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 219│
+│ at CashCanvas.Web.Controllers.TransactionController.ImportTransactions(IFormFile file) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 181│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T06:58:48.908Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : InvalidDataException                                   │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ImportTransactions                                     │
+│ Error Message   : Invalid data at row 3: Invalid PaymentMethod 'Bank' at row 3.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.TransactionService.CreateTransactionFromCsvRowAsync(String[] fields, Guid userId, Int32 rowNumber) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 275│
+│ at CashCanvas.Services.Services.TransactionService.ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 219│
+│ at CashCanvas.Web.Controllers.TransactionController.ImportTransactions(IFormFile file) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 181│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T07:04:07.869Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : InvalidDataException                                   │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ImportTransactions                                     │
+│ Error Message   : Invalid data at row 3: Invalid PaymentMethod 'Bank' at row 3.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at CashCanvas.Services.Services.TransactionService.CreateTransactionFromCsvRowAsync(String[] fields, Guid userId, Int32 rowNumber) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 275│
+│ at CashCanvas.Services.Services.TransactionService.ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 219│
+│ at CashCanvas.Web.Controllers.TransactionController.ImportTransactions(IFormFile file) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 181│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T07:05:14.201Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : DbUpdateException                                      │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ImportTransactions                                     │
+│ Error Message   : An error occurred while saving the entity changes. See the inner exception for details.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at CashCanvas.Data.UnitOfWork.UnitOfWork.CompleteAsync() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\DataAccessLayer\UnitOfWork\UnitOfWork .cs:line 42│
+│ at CashCanvas.Services.Services.TransactionService.AddTransactionsToDatabaseAsync(List`1 transactions) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 314│
+│ at CashCanvas.Services.Services.TransactionService.ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 224│
+│ at CashCanvas.Web.Controllers.TransactionController.ImportTransactions(IFormFile file) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 181│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T07:06:47.642Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : DbUpdateException                                      │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ImportTransactions                                     │
+│ Error Message   : An error occurred while saving the entity changes. See the inner exception for details.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at CashCanvas.Data.UnitOfWork.UnitOfWork.CompleteAsync() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\DataAccessLayer\UnitOfWork\UnitOfWork .cs:line 42│
+│ at CashCanvas.Services.Services.TransactionService.AddTransactionsToDatabaseAsync(List`1 transactions) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 314│
+│ at CashCanvas.Services.Services.TransactionService.ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 224│
+│ at CashCanvas.Web.Controllers.TransactionController.ImportTransactions(IFormFile file) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 181│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T07:07:47.658Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : DbUpdateException                                      │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ImportTransactions                                     │
+│ Error Message   : An error occurred while saving the entity changes. See the inner exception for details.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at CashCanvas.Data.UnitOfWork.UnitOfWork.CompleteAsync() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\DataAccessLayer\UnitOfWork\UnitOfWork .cs:line 42│
+│ at CashCanvas.Services.Services.TransactionService.AddTransactionsToDatabaseAsync(List`1 transactions) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 314│
+│ at CashCanvas.Services.Services.TransactionService.ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 224│
+│ at CashCanvas.Web.Controllers.TransactionController.ImportTransactions(IFormFile file) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 181│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T07:08:28.508Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : DbUpdateException                                      │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ImportTransactions                                     │
+│ Error Message   : An error occurred while saving the entity changes. See the inner exception for details.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at CashCanvas.Data.UnitOfWork.UnitOfWork.CompleteAsync() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\DataAccessLayer\UnitOfWork\UnitOfWork .cs:line 42│
+│ at CashCanvas.Services.Services.TransactionService.AddTransactionsToDatabaseAsync(List`1 transactions) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 314│
+│ at CashCanvas.Services.Services.TransactionService.ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 224│
+│ at CashCanvas.Web.Controllers.TransactionController.ImportTransactions(IFormFile file) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 181│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T07:08:56.516Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : DbUpdateException                                      │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ImportTransactions                                     │
+│ Error Message   : An error occurred while saving the entity changes. See the inner exception for details.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at CashCanvas.Data.UnitOfWork.UnitOfWork.CompleteAsync() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\DataAccessLayer\UnitOfWork\UnitOfWork .cs:line 42│
+│ at CashCanvas.Services.Services.TransactionService.AddTransactionsToDatabaseAsync(List`1 transactions) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 314│
+│ at CashCanvas.Services.Services.TransactionService.ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 224│
+│ at CashCanvas.Web.Controllers.TransactionController.ImportTransactions(IFormFile file) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 181│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T07:11:20.974Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : DbUpdateException                                      │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ImportTransactions                                     │
+│ Error Message   : An error occurred while saving the entity changes. See the inner exception for details.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at CashCanvas.Data.UnitOfWork.UnitOfWork.CompleteAsync() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\DataAccessLayer\UnitOfWork\UnitOfWork .cs:line 42│
+│ at CashCanvas.Services.Services.TransactionService.AddTransactionsToDatabaseAsync(List`1 transactions) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 314│
+│ at CashCanvas.Services.Services.TransactionService.ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 224│
+│ at CashCanvas.Web.Controllers.TransactionController.ImportTransactions(IFormFile file) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 181│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────── ERROR LOG ───────────────────────────────┐
+│ Timestamp       : 2025-06-19T07:16:50.539Z                               │
+│ Status Code     : 500                                                    │
+│ Exception Type  : DbUpdateException                                      │
+│ Controller Name : Transaction                                            │
+│ Action Name     : ImportTransactions                                     │
+│ Error Message   : An error occurred while saving the entity changes. See the inner exception for details.│
+├────────────────────────────── Stack Trace ─────────────────────────────┤
+│ at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)│
+│ at CashCanvas.Data.UnitOfWork.UnitOfWork.CompleteAsync() in D:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\DataAccessLayer\UnitOfWork\UnitOfWork .cs:line 42│
+│ at CashCanvas.Services.Services.TransactionService.AddTransactionsToDatabaseAsync(List`1 transactions) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 317│
+│ at CashCanvas.Services.Services.TransactionService.ImportTransactionsFromCsvAsync(Stream csvStream, Guid userId) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\BussinessLogicLayer\Services\TransactionService.cs:line 224│
+│ at CashCanvas.Web.Controllers.TransactionController.ImportTransactions(IFormFile file) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Controllers\TransactionController.cs:line 181│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)│
+│ at CashCanvas.Web.Middlewares.JWTMiddleware.Invoke(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\JWTMiddleware.cs:line 77│
+│ at CashCanvas.Web.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\LoggingMiddleware.cs:line 19│
+│ at CashCanvas.Web.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in d:\Demo and Practice Project\New folder\ExpenseManagement\Cash-Canvas-Expense-Tracker-System\CashCanvasWebApplication\Middlewares\ExceptionHandlerMiddleware.cs:line 36│
+└────────────────────────────────────────────────────────────────────────┘
+

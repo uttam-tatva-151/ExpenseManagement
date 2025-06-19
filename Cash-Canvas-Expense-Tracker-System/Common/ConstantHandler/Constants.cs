@@ -104,11 +104,15 @@ namespace CashCanvas.Common.ConstantHandler
         public const string FORGOT_PASSWORD_FILE = "ForgotPasswordFormat.html";
         public const string EXPORT_FILE_GENERATION_ERROR = "An error occurred while generating the export file. Please try again later.";
         public const string EXPORT_FILE_GENERATION_SUCCESS = "The export file was generated successfully.";
+        public const string IMPORT_FILE_GENERATION_ERROR = "An error occurred while import data to the database from file. Please try again later.";
+        public const string IMPORT_FILE_GENERATION_SUCCESS = "The import file successfully.";
 
         public const string TEMPLATE_NOT_FOUND = "Template not found.";
 
         public const string DATE_FORMATE = "yyyy-MM-dd";
         public const string PDF_CONTENT_TYPE = "application/pdf";
+        public const string EXCEL_CONTENT_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+        public const string CSV_CONTENT_TYPE = "text/csv";
         public const string IMAGE_FORMATE = "data:image/jpeg;base64";
         public const string JSON_CONTENT_TYPE = "application/json";
         #endregion
@@ -129,7 +133,7 @@ namespace CashCanvas.Common.ConstantHandler
         public const int SESSION_IDLE_TIME_OUT_HOURS = 10;
         public const string UNKNOWN_IP = "Unknown IP";
         public const string LOGGING_PATH_URL = "Logging:ErrorLogPath";
-        public static string BILL_LIST_EXCEL_FORMAT_FILE = "BillListExcelFormat.xlsx";
+        public const string BILL_LIST_EXCEL_FORMAT_FILE = "BillListExcelFormat.xlsx";
         #endregion
 
     }

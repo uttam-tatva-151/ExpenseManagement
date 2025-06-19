@@ -248,7 +248,8 @@
 </div>
 
 <!-- Export Transactions Modal -->
-<div class="modal fade" id="exportTransactionModal" tabindex="-1" aria-labelledby="exportTransactionModalLabel" aria-hidden="true">
+<div class="modal fade" id="exportTransactionModal" tabindex="-1" aria-labelledby="exportTransactionModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content exportModalContent">
             <div class="modal-header">
@@ -307,33 +308,37 @@
 
 <!-- Import Transactions Modal -->
 <div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="importModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content importModalContent">
-      <div class="modal-header">
-        <h5 class="modal-title" id="importModalLabel">
-          <i class="bi bi-upload"></i> Import Transactions
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="text-muted small mb-3">
-          Upload a <span class="fw-bold">CSV file</span> to quickly import your expenses or transactions.<br>
-          <span class="text-success">Only .csv files are accepted.</span>
-        </p>
-        <form id="importForm" enctype="multipart/form-data">
-          <div class="mb-3">
-            <input class="form-control" type="file" id="importCsvFile" accept=".csv" required>
-          </div>
-          <div id="importFileFeedback" class="form-text text-danger d-none"></div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" id="importConfirmBtn" disabled>
-          <i class="bi bi-upload"></i> Import Now
-        </button>
-      </div>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content importModalContent">
+            <div class="modal-header">
+                <h5 class="modal-title" id="importModalLabel">
+                    <i class="bi bi-upload"></i> Import Transactions
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted small mb-3">
+                    Upload a <span class="fw-bold">CSV file</span> to quickly import your expenses or transactions.<br>
+                    <span class="text-success">Only .csv files are accepted.</span>
+                </p>
+                <form id="importForm" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <input class="form-control" type="file" id="importCsvFile" accept=".csv" required>
+                    </div>
+                    <div id="importFileFeedback" class="form-text text-danger d-none"></div>
+                </form>
+            </div>
+            <button type="button" class="btn btn-primary position-absolute downloadTemplateBtn"
+                onclick="window.location.href='/Transaction/DownloadCsvTemplate'">
+                <i class="bi bi-file-earmark-arrow-down"></i> Template
+            </button>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="importConfirmBtn" disabled>
+                    <i class="bi bi-upload"></i> Import Now
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 @section Scripts {
     <script>

@@ -55,11 +55,12 @@ public class NotificationService(IUnitOfWork unitOfWork, IMediator mediator) : I
         Notifications notification = CreateNotification(userId, budget, NotificationType.Milestone, title, message);
 
         IEnumerable<Notifications> existingAllNotifications = await _unitOfWork.Notifications.GetListAsync(
-                                                                                n => n.UserId == userId &&
-                                                                                    n.Type == NotificationType.Milestone &&
-                                                                                    !n.IsDeleted &&
-                                                                                    n.Meta.Contains($"\"BudgetId\":\"{budget.BudgetId}\"")
-                                                                            );
+                                                                                                        n => n.UserId == userId &&
+                                                                                                            n.Type == NotificationType.Milestone &&
+                                                                                                            !n.IsDeleted &&
+                                                                                                            n.Meta != null &&
+                                                                                                            n.Meta.Contains($"\"BudgetId\":\"{budget.BudgetId}\"")
+                                                                                                    );
 
         if (action == Constants.DATABASE_ACTION_DELETE)
         {

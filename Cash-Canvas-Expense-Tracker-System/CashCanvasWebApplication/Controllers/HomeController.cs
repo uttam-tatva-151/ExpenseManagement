@@ -3,22 +3,22 @@ using CashCanvas.Common.ConstantHandler;
 using Microsoft.AspNetCore.Authorization;
 using CashCanvas.Web.Attributes;
 using CashCanvas.Core.ViewModel;
+using CashCanvas.Services.Interfaces;
+using CashCanvas.Core.Beans;
+using CashCanvas.Web.Middlewares;
 
 namespace CashCanvas.Web.Controllers;
 
-public class HomeController : Controller
+public class HomeController(IDashboardService dashboardService) : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
+    private readonly IDashboardService _dashboardService = dashboardService;
 
     [CustomAuthorize]
-    public IActionResult Index()
+    public async Task<IActionResult> Index(PaginationDetails paginationDetails)
     {
-        return View();
+        Guid userId = User.GetUserId();
+        DashboardViewModel dashboardViewModel = await _dashboardService.GetAnalysisData(paginationDetails,userId);
+        return View(dashboardViewModel);
     }
 
     [CustomAuthorize]

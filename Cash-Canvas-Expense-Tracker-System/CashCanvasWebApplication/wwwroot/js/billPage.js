@@ -1,3 +1,16 @@
+const paginationDetails = {
+  totalRecords: 0,
+  pageNumber: 1,
+  pageSize: 0,      
+  sortBy: null,                 
+  isAscending: true,
+  timeFilter: "",
+  fromDate: null,              
+  toDate: null,
+  searchTerm: "",
+};
+
+// #region Bill List Toggle
 function showMainList() {
   $("#mainBillList").show();
   $("#trashBillList").hide();
@@ -20,15 +33,15 @@ window.onload = function () {
     showMainList();
   }
 };
+// #endregion
+
+// #region Bill Details & Overlay
 $(document).ready(function () {
-  // Show Details Overlay
   $(".btnShowDetails").on("click", function (e) {
     e.preventDefault();
-
     let billId = $(this).data("bill-id");
     let bill = bills.find((b) => b.BillId == billId);
     if (bill) {
-      // Set status
       $(".detailsList .statusPill")
         .removeClass("statusActive statusOverdue")
         .addClass(bill.IsOverdue ? "statusOverdue" : "statusActive")
@@ -37,8 +50,6 @@ $(document).ready(function () {
             bill.IsOverdue ? "exclamation-circle" : "check-circle"
           }"></i> ${bill.IsOverdue ? "Overdue" : "Active"}`
         );
-
-      // Amount
       $(".detailsList .amountDetail")
         .removeClass("amountIncome amountExpense")
         .addClass("amountExpense")
@@ -48,10 +59,8 @@ $(document).ready(function () {
               minimumFractionDigits: 2,
             })
         );
-
-      // Due date
       let dueDate = new Date(bill.DueDate);
-      $(".detailsList .dueDate").text(dueDate.toLocaleDateString("en-CA")); // yyyy-mm-dd
+      $(".detailsList .dueDate").text(dueDate.toLocaleDateString("en-CA"));
       $(".detailsList .frequency").text(
         billFrequencyMap[bill.Frequency] || "One-time"
       );
@@ -64,12 +73,10 @@ $(document).ready(function () {
       $(".detailsList .notes").text(bill.Notes || "No additional notes");
       $(".editBillBtn").attr("href", "/Bill/EditBill/" + bill.BillId);
     }
-
     $("#detailsOverlayBg").addClass("open");
     $("body").css("overflow", "hidden");
   });
 
-  // Background click: Only close if user clicks directly on the background
   $(".detailsOverlayBg").on("click", function (e) {
     if (e.target === this) {
       $(".detailsOverlayBg").removeClass("open");
@@ -77,57 +84,45 @@ $(document).ready(function () {
     }
   });
 
-  // Close button: Always close
   $("#detailsOverlayClose").on("click", function () {
     $("#detailsOverlayBg").removeClass("open");
     $("body").css("overflow", "");
   });
 
-  // Prevent overlay click bubbling
   $(".detailsOverlayPanel").on("click", function (e) {
     e.stopPropagation();
   });
+});
+// #endregion
+
+// #region Filter Overlay
+$(document).ready(function () {
   $("#btnFilter").on("click", function (e) {
     e.preventDefault();
     $("#filterOverlayBg").addClass("open");
     $("body").css("overflow", "hidden");
   });
 
-  // Delete Confirmation
+
+});
+// #endregion
+
+// #region Bill Delete Confirmation
+$(document).ready(function () {
   $(".btnDeleteBill").on("click", function (e) {
     e.preventDefault();
     const billId = $(this).data("bill-id");
     $("#billIdToDelete").attr("value", billId);
     $("#deleteConfirmModal").modal("show");
   });
-
-  // // Confirm Delete
-  // $("#confirmDeleteBtn").on("click", function () {
-  //   const billId = $(this).data("bill-id");
-  //   $.ajax({
-  //     url: `/Bill/MoveToTrash/${billId}`,
-  //     method: "POST",
-  //     success: function () {
-  //       $("#deleteConfirmModal").modal("hide");
-  //       location.reload(); // Refresh to update lists
-  //     },
-  //   });
-  // });
 });
+// #endregion
+
+// #region Payment Submission & Modal
 $(document).ready(function () {
   $("#submitPayment").on("click", function () {
     const $form = $("#markAsPaidForm");
     if ($form[0].checkValidity()) {
-      const formData = new FormData($form[0]);
-      const paymentData = {
-        BillId: formData.get("BillId"),
-        AmountPaid: parseFloat(formData.get("AmountPaid")),
-        PaymentMethod: formData.get("PaymentMethod"),
-        Notes: formData.get("Notes") || null,
-      };
-      // Example: Send paymentData to backend (replace with actual API call)
-      console.log("Payment Data:", paymentData);
-      // Close modal after submission
       $("#markAsPaidModal").modal("hide");
     } else {
       $form.addClass("was-validated");
@@ -140,11 +135,16 @@ $(document).ready(function () {
     $("#billId").val(billId);
     $("#markAsPaidModal").modal("show");
   });
+
   $("#markAsPaidModal").on("hidden.bs.modal", function () {
     $("#markAsPaidForm")[0].reset();
     $("#markAsPaidForm").removeClass("was-validated");
   });
+});
+// #endregion
 
+// #region Export Modal
+$(document).ready(function () {
   let selectedExportType = "";
 
   $("#exportBtn").on("click", function () {
@@ -173,10 +173,11 @@ $(document).ready(function () {
 
   $("#exportConfirmBtn").on("click", function () {
     if (selectedExportType === "pdf") {
-      window.location.href = '/Bill/ExportPdf';
+      window.location.href = "/Bill/ExportPdf";
       $("#exportModal").modal("hide");
     }
   });
+
   function showExportComingSoon(label) {
     let msg = `${label} export will be available soon! Our team is working to bring you this option in a future update.`;
     $("#comingSoonMsg").text(msg);
@@ -184,43 +185,141 @@ $(document).ready(function () {
     let toast = bootstrap.Toast.getOrCreateInstance(toastEl);
     toast.show();
   }
+});
+// #endregion
 
-  $('.addReminderBtn').on('click', function(e) {
+// #region Reminder Modal
+$(document).ready(function () {
+  $(".addReminderBtn").on("click", function (e) {
     e.preventDefault();
-    $('#reminderBillId').val($(this).data('bill-id'));
-    $('#reminderModalBackdrop').css('display', 'flex');
-});
+    let billId = $(this).data("bill-id");
+    $("#reminderBillId").val(billId);
+    let bill = bills.find((b) => b.BillId == billId);
 
-// Close modal
-$('#closeReminderModalBtn').on('click', function() {
-    $('#reminderModalBackdrop').css('display', 'none');
-});
+    console.log(bill);
+    let maxDays =
+      bill && bill.Frequency ? getMaxReminderDays(billFrequencyMap[bill.Frequency]) : 365;
+    $("#reminderDaysInput").attr("max", maxDays);
+    $("#saveReminderBtn").prop("disabled", false);
+    $("#reminderModalBackdrop").css("display", "flex");
+  });
 
-// Quick pick buttons
-$('.quickDayBtn').on('click', function() {
-    $('#reminderDaysInput').val($(this).data('days'));
-});
+  // Listen for changes to input
+  $("#reminderDaysInput").on("input change", function () {
+    let max = parseInt($(this).attr("max"), 10);
+    let val = parseInt($(this).val(), 10);
 
-// Save Reminder button
-$('#saveReminderBtn').on('click', function() {
-    var billId = $('#reminderBillId').val();
-    var days = $('#reminderDaysInput').val();
-    alert("Reminder set for " + days + " day(s) before due date!");
-    $('#reminderModalBackdrop').css('display', 'none');
-});
-});
+    if (val > max) {
+      $("#saveReminderBtn").prop("disabled", true);
+      showReminderMaxToast(max);
+    } else {
+      $("#saveReminderBtn").prop("disabled", false);
+    }
+  });
 
+  function showReminderMaxToast(max) {
+  showToast(`You can't set reminder more than ${max} day(s) before due date for this bill.`,'Warning');
+  }
+  $("#closeReminderModalBtn").on("click", function () {
+    $("#reminderModalBackdrop").css("display", "none");
+  });
+
+  $(".quickDayBtn").on("click", function () {
+    $("#reminderDaysInput").val($(this).data("days"));
+  });
+
+  $("#saveReminderBtn").on("click", function () {
+    let billId = $("#reminderBillId").val();
+    let days = $("#reminderDaysInput").val();
+
+    $.ajax({
+      url: "/Bill/SetReminder",
+      type: "POST",
+      contentType: "application/json",
+      data: {billid : billId, days : days},
+      success: function (response) {
+        if (response && response.success) {
+          showToast(response.message, response.status);
+          location.reload(); // Optionally reload to update UI
+        } else {
+          showToast(
+            response.message || "Error in Set Reminder.",
+            response.status
+          );
+        }
+      },
+      error: function () {
+        showToast("Error in Set Reminder.", "Error");
+      },
+    });
+    
+    $("#reminderModalBackdrop").css("display", "none");
+  });
+});
+function getMaxReminderDays(frequency) {
+  switch (frequency) {
+    case "Daily":
+      return 1;
+    case "Weekly":
+      return 7;
+    case "BiWeekly":
+      return 14;
+    case "Monthly":
+      return 30;
+    case "Quarterly":
+      return 90;
+    case "HalfYearly":
+      return 183;
+    case "Yearly":
+      return 365;
+    default:
+      return 365;
+  }
+}
+// #endregion
+
+// #region Payment History Modal
 $(document).on("click", ".btnShowHistory", function (e) {
   e.preventDefault();
   let billId = $(this).data("bill-id");
-  // Fetch the rendered partial view (HTML)
   $.get(
     "/Bill/GetPaymentHistoryTable",
     { billId: billId },
     function (partialHtml) {
-      console.log(partialHtml);
       $("#historyTableBody").html(partialHtml);
       $("#historyModal").modal("show");
     }
   );
 });
+
+$(document).on("click", ".btnSkipPeriod", function (e) {
+  e.preventDefault();
+  let startDate = $(this).data("period-start");
+  let paymentHistory = history.find(
+    (b) => b.PeriodStart.ToString("yyyy-MM-dd") == startDate
+  );
+
+  if (paymentHistory) {
+    $.ajax({
+      url: "/Bill/SkipPeriod",
+      type: "POST",
+      contentType: "application/json",
+      data: JSON.stringify(paymentHistory),
+      success: function (response) {
+        if (response && response.success) {
+          showToast(response.message, response.status);
+          location.reload(); // Optionally reload to update UI
+        } else {
+          showToast(
+            response.message || "Error skipping period.",
+            response.status
+          );
+        }
+      },
+      error: function () {
+        showToast("Error occurs in skipping period.", "Error");
+      },
+    });
+  }
+});
+// #endregion

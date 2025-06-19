@@ -46,7 +46,7 @@ public static class TimeFilterHelper
 {
     public static DateTime? GetStartDate(TimeFilterType filterType)
     {
-        var now = DateTime.UtcNow.Date;
+        DateTime now = DateTime.UtcNow.Date;
 
         return filterType switch
         {

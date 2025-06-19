@@ -46,9 +46,7 @@ namespace CashCanvas.Common.ConstantHandler
             public const string WARNING_MULTIPLE_DELETE_CONFIRMATION = "Are you sure want to delete this selected {0}s?";
             public const string WARNING_EMAIL_NOT_FOUND = "Email not found.";
             public const string WARNING_EMAIL_ALL_READY_EXISTS = "Email already exists.";
-            public const string WARNING_EDITOR_ID_NOT_FOUND = "Editor ID not found.";
             public const string WARNING_NOTHING_SELECTED = "Please select at least one {0}.";
-            public const string WARNING_ACTION_NOT_ALLOWED = "Action not allowed for you.";
             public const string WARNING_RESET_TOKEN_EXPIRED = "Reset Password Link Expired";
             #endregion
             #region  Info Messages
